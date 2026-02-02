@@ -7,24 +7,187 @@
   <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-  <div class="container">
-    <nav>
+  <!-- Sticky Nav -->
+  <nav class="nav-sticky">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Ilian Khankhalaev</a>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
       </ul>
-    </nav>
+    </div>
+  </nav>
 
-    <main>
-      <h1>Ilian Khankhalaev</h1>
-      <p class="tagline">CS student building software + ML projects.</p>
-      <div class="links">
-        <a href="#">Resume</a>
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Email</a>
+  <main>
+    <!-- Hero / Intro -->
+    <section id="hero" class="section hero">
+      <div class="container">
+        <h1 class="hero-name">Ilian Khankhalaev</h1>
+        <p class="hero-role">CS Student · Software &amp; ML</p>
+        <p class="hero-tagline">Building software and machine learning projects. Interested in applied ML, data engineering, and clean systems.</p>
+        <div class="hero-cta">
+          <a href="#">Resume (PDF)</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
       </div>
-    </main>
-  </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="featured" class="section">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-cards">
+          <article class="project-card">
+            <h3>Gym Whisper</h3>
+            <p>Placeholder: A fitness tracking app with voice-guided workouts and progress analytics.</p>
+            <div class="tech-tags">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Node.js</span>
+            </div>
+            <div class="card-links">
+              <a href="#">Live Demo</a>
+              <a href="#">Code</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <h3>House-Price-ML (v2 Feature Engineering)</h3>
+            <p>Placeholder: ML pipeline for house price prediction with advanced feature engineering.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>scikit-learn</span>
+              <span>Pandas</span>
+            </div>
+            <div class="card-links">
+              <a href="#">Live Demo</a>
+              <a href="#">Code</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <h3>Network Impact Analyzer</h3>
+            <p>Placeholder: Tool for analyzing network topology and simulating impact of node failures.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>NetworkX</span>
+              <span>Graph Theory</span>
+            </div>
+            <div class="card-links">
+              <a href="#">Live Demo</a>
+              <a href="#">Code</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <h3>Pendulum Data-Driven Control</h3>
+            <p>Placeholder: Data-driven control system for inverted pendulum using reinforcement learning.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>ML</span>
+              <span>Control Theory</span>
+            </div>
+            <div class="card-links">
+              <a href="#">Live Demo</a>
+              <a href="#">Code</a>
+            </div>
+          </article>
+        </div>
+        <p class="see-all">
+          <a href="projects.html">See all projects →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills / Tech Stack -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills &amp; Tech Stack</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h4>Languages</h4>
+            <div class="chips">
+              <span>Python</span>
+              <span>JavaScript</span>
+              <span>TypeScript</span>
+              <span>SQL</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>ML &amp; Data</h4>
+            <div class="chips">
+              <span>scikit-learn</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>PyTorch</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Web &amp; Tools</h4>
+            <div class="chips">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Git</span>
+              <span>Linux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Leadership -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience &amp; Leadership</h2>
+        <div class="experience-list">
+          <article class="exp-entry">
+            <div class="exp-header">
+              <h3>Role Title (Placeholder)</h3>
+              <span class="exp-date">2024 – Present</span>
+            </div>
+            <p class="exp-org">Company / Organization Name</p>
+            <p class="exp-desc">Brief placeholder description of responsibilities and impact.</p>
+          </article>
+          <article class="exp-entry">
+            <div class="exp-header">
+              <h3>Role Title (Placeholder)</h3>
+              <span class="exp-date">2023 – 2024</span>
+            </div>
+            <p class="exp-org">Company / Organization Name</p>
+            <p class="exp-desc">Brief placeholder description of responsibilities and impact.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-entry">
+          <h3>Degree Name (Placeholder)</h3>
+          <p class="edu-org">University Name</p>
+          <p class="edu-date">Expected 20XX</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-links">
+          <a href="#">Email</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Ilian Khankhalaev</p>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
