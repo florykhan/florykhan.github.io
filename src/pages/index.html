@@ -6,7 +6,7 @@
   <title>Ilian Khankhalaev</title>
   <link rel="stylesheet" href="../styles/main.css">
 </head>
-<body class="home">
+<body>
   <!-- Sticky Nav -->
   <nav class="nav-sticky">
     <div class="nav-inner">
@@ -177,6 +177,18 @@
     <section id="contact" class="section">
       <div class="container">
         <h2 class="section-title">Contact</h2>
+        <p class="contact-intro">Have a question or want to connect? Send me a message and I'll get back as soon as I can.</p>
+        <!-- Replace example@email.com with your real email -->
+        <form class="contact-form" action="mailto:example@email.com" method="POST" enctype="text/plain">
+          <label for="contact-name">Name</label>
+          <input id="contact-name" type="text" name="name" autocomplete="name" required>
+          <label for="contact-email">Email</label>
+          <input id="contact-email" type="email" name="email" autocomplete="email" required>
+          <label for="contact-message">Message / Question</label>
+          <textarea id="contact-message" name="message" rows="5" required></textarea>
+          <button type="submit" class="contact-submit">Send</button>
+        </form>
+        <p class="contact-privacy">No spam — your message goes directly to my inbox.</p>
         <div class="contact-links">
           <a href="#">Email</a>
           <a href="#">LinkedIn</a>
