@@ -15,6 +15,27 @@ body {
   background-color: #0f0f0f;
 }
 
+/* Home page: subtle animated gradient background */
+body:has(.hero-photo) {
+  background: linear-gradient(
+    135deg,
+    #0f0f0f 0%,
+    #0c0c10 18%,
+    #0a0a12 40%,
+    #0d0a10 62%,
+    #0b0b0f 82%,
+    #0f0f0f 100%
+  );
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: gradient-bg 30s ease-in-out infinite;
+}
+
+@keyframes gradient-bg {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
 /* ========================================
    Layout
    ======================================== */
