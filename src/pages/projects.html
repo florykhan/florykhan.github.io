@@ -17,45 +17,134 @@
     </div>
   </nav>
 
-  <main>
-    <section class="section">
+  <main class="projects-page">
+    <section class="section projects-intro">
       <div class="container">
         <h1>Projects</h1>
+        <p class="projects-intro-text">Projects are grouped by type below. Click any card to open its detail page for overview, tech stack, results, and learnings.</p>
+        <nav class="projects-nav" aria-label="Jump to category">
+          <a href="#fullstack">Full-Stack Team Projects</a>
+          <a href="#ml">Machine Learning</a>
+          <a href="#data">Data Analysis</a>
+          <a href="#coursework">Coursework / Systems</a>
+        </nav>
+      </div>
+    </section>
+
+    <section id="fullstack" class="section project-category">
+      <div class="container">
+        <h2 class="category-heading">Full-Stack Team Projects (Software)</h2>
         <div class="project-cards">
           <a class="project-card" href="./projects/gym-whisper.html">
             <h3>Gym Whisper</h3>
-            <p>Placeholder: A fitness tracking app with voice-guided workouts and progress analytics.</p>
+            <p>Fitness tracking app with voice-guided workouts and progress analytics.</p>
             <div class="tech-tags">
               <span>React</span>
               <span>TypeScript</span>
               <span>Node.js</span>
             </div>
           </a>
-          <a class="project-card" href="./projects/house-price-ml.html">
-            <h3>House-Price-ML (v2 Feature Engineering)</h3>
-            <p>Placeholder: ML pipeline for house price prediction with advanced feature engineering.</p>
-            <div class="tech-tags">
-              <span>Python</span>
-              <span>scikit-learn</span>
-              <span>Pandas</span>
-            </div>
-          </a>
           <a class="project-card" href="./projects/network-impact-analyzer.html">
-            <h3>Network Impact Analyzer</h3>
-            <p>Placeholder: Tool for analyzing network topology and simulating impact of node failures.</p>
+            <h3>Network Impact Analyzer (TELUS towers / KPI heatmap)</h3>
+            <p>Tool for analyzing network topology and simulating impact of node failures with KPI heatmaps.</p>
             <div class="tech-tags">
               <span>Python</span>
               <span>NetworkX</span>
               <span>Graph Theory</span>
             </div>
           </a>
+          <a class="project-card" href="#">
+            <h3>Team Software Project (Placeholder)</h3>
+            <p>Placeholder: Full-stack team project description.</p>
+            <div class="tech-tags">
+              <span>React</span>
+              <span>API</span>
+              <span>PostgreSQL</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="ml" class="section project-category">
+      <div class="container">
+        <h2 class="category-heading">Machine Learning</h2>
+        <div class="project-cards">
+          <a class="project-card" href="./projects/house-price-ml.html">
+            <h3>House-Price-ML (v2 Feature Engineering)</h3>
+            <p>ML pipeline for house price prediction with advanced feature engineering.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>scikit-learn</span>
+              <span>Pandas</span>
+            </div>
+          </a>
           <a class="project-card" href="./projects/pendulum-data-driven-control.html">
             <h3>Pendulum Data-Driven Control</h3>
-            <p>Placeholder: Data-driven control system for inverted pendulum using reinforcement learning.</p>
+            <p>Data-driven control system for inverted pendulum using reinforcement learning.</p>
             <div class="tech-tags">
               <span>Python</span>
               <span>ML</span>
               <span>Control Theory</span>
+            </div>
+          </a>
+          <a class="project-card" href="#">
+            <h3>ML Project (Placeholder)</h3>
+            <p>Placeholder: Machine learning project description.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>PyTorch</span>
+              <span>NumPy</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="data" class="section project-category">
+      <div class="container">
+        <h2 class="category-heading">Data Analysis</h2>
+        <div class="project-cards">
+          <a class="project-card" href="#">
+            <h3>Data Analysis Project (Placeholder)</h3>
+            <p>Placeholder: Data analysis and visualization project.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>Matplotlib</span>
+            </div>
+          </a>
+          <a class="project-card" href="#">
+            <h3>Data Analysis Project 2 (Placeholder)</h3>
+            <p>Placeholder: Exploratory data analysis and reporting.</p>
+            <div class="tech-tags">
+              <span>SQL</span>
+              <span>Jupyter</span>
+              <span>Visualization</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="coursework" class="section project-category">
+      <div class="container">
+        <h2 class="category-heading">Coursework / Systems / Smaller Projects</h2>
+        <div class="project-cards">
+          <a class="project-card" href="#">
+            <h3>Course / System Project (Placeholder)</h3>
+            <p>Placeholder: Coursework or systems project description.</p>
+            <div class="tech-tags">
+              <span>C</span>
+              <span>Linux</span>
+            </div>
+          </a>
+          <a class="project-card" href="#">
+            <h3>Smaller Project (Placeholder)</h3>
+            <p>Placeholder: Smaller or side project description.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>CLI</span>
             </div>
           </a>
         </div>

@@ -495,9 +495,83 @@ body > .container {
 }
 
 /* ========================================
-   Projects Page (existing)
+   Projects Page
    ======================================== */
 
+/* Projects page main heading */
+main h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+  color: #fff;
+}
+
+.projects-intro-text {
+  font-size: 1rem;
+  color: #a0a0a0;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  max-width: 48ch;
+}
+
+.projects-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.projects-nav a {
+  font-size: 0.9rem;
+  color: #7ab8e8;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.projects-nav a:hover,
+.projects-nav a:focus-visible {
+  color: #a0d4f8;
+}
+
+.projects-nav a:focus {
+  outline: none;
+}
+
+.projects-nav a:focus-visible {
+  outline: 2px solid rgba(122, 184, 232, 0.6);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.project-category {
+  padding-top: 2.5rem;
+  scroll-margin-top: 4rem;
+}
+
+.project-category:first-of-type {
+  padding-top: 0;
+}
+
+.category-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c0c0c0;
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.projects-page .project-cards {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+@media (max-width: 600px) {
+  .projects-page .project-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Legacy list styles (kept for any other use) */
 .projects-list {
   list-style: none;
   margin: 0;
@@ -538,14 +612,6 @@ body > .container {
 
 .project-links a:hover {
   color: #a0d4f8;
-}
-
-/* Projects page main heading */
-main h1 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  margin: 0 0 1.5rem;
-  color: #fff;
 }
 
 /* ========================================
