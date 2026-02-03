@@ -435,6 +435,9 @@ body > .container {
   object-fit: contain;
   border-radius: 10px;
   opacity: 0.9;
+  /* Fallback when image fails to load */
+  background-color: #252525;
+  border: 1px solid #2a2a2a;
 }
 
 @media (max-width: 600px) {
