@@ -541,6 +541,14 @@ body[data-narrative="gallery"] .narrative-key-takeaway {
   hyphens: auto;
 }
 
+/* SFU narrative: justified text for readability */
+body[data-narrative="sfu"] .narrative-intro .narrative-intro-text,
+body[data-narrative="sfu"] .narrative-content .narrative-section p {
+  text-align: justify !important;
+  hyphens: auto;
+  line-height: 1.7;
+}
+
 .narrative-prev-next {
   display: flex;
   justify-content: space-between;

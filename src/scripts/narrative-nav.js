@@ -1,9 +1,19 @@
 /**
  * Injects prev/next navigation on narrative detail pages.
  * Run after DOM ready. Expects body[data-narrative] and elements #narrative-prev, #narrative-next.
+ * If body lacks data-narrative, sets it from the current page path so narrative-specific CSS (e.g. justified text) applies.
  */
 (function () {
-  const slug = document.body.getAttribute('data-narrative');
+  var slug = document.body.getAttribute('data-narrative');
+  if (!slug && typeof NARRATIVE_ROUTE_MAP !== 'undefined') {
+    var pathname = window.location.pathname || '';
+    var match = pathname.match(/\/([^/]+)\.html$/);
+    var pageSlug = match ? match[1] : null;
+    if (pageSlug && NARRATIVE_ROUTE_MAP[pageSlug]) {
+      document.body.setAttribute('data-narrative', pageSlug);
+      slug = pageSlug;
+    }
+  }
   if (!slug) return;
 
   function getStep(currentSlug) {
