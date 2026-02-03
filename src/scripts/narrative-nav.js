@@ -38,6 +38,14 @@
   const step = getStep(slug);
   if (!step) return;
 
+  function replaceWithDisabled(el, text) {
+    const span = document.createElement('span');
+    span.className = el.className + ' narrative-btn-disabled';
+    span.setAttribute('aria-disabled', 'true');
+    span.textContent = text;
+    el.parentNode.replaceChild(span, el);
+  }
+
   const prevEl = document.getElementById('narrative-prev');
   const nextEl = document.getElementById('narrative-next');
 
@@ -46,7 +54,7 @@
     if (prevHref) {
       prevEl.href = prevHref;
     } else {
-      prevEl.remove();
+      replaceWithDisabled(prevEl, prevEl.textContent);
     }
   }
 
@@ -55,7 +63,7 @@
     if (nextHref) {
       nextEl.href = nextHref;
     } else {
-      nextEl.remove();
+      replaceWithDisabled(nextEl, nextEl.textContent);
     }
   }
 
