@@ -6,7 +6,17 @@
   const slug = document.body.getAttribute('data-narrative');
   if (!slug) return;
 
-  const step = NARRATIVE_STEPS.find(function (s) { return s.slug === slug; });
+  function getStep(currentSlug) {
+    if (typeof NARRATIVE_ROUTE_MAP !== 'undefined' && NARRATIVE_ROUTE_MAP[currentSlug]) {
+      return NARRATIVE_ROUTE_MAP[currentSlug];
+    }
+    if (Array.isArray(NARRATIVE_STEPS)) {
+      return NARRATIVE_STEPS.find(function (s) { return s.slug === currentSlug; });
+    }
+    return null;
+  }
+
+  const step = getStep(slug);
   if (!step) return;
 
   function replaceWithDisabled(el, text) {
