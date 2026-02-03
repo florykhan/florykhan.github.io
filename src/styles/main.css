@@ -490,6 +490,16 @@ body > .container {
   color: #fff;
 }
 
+.exp-minor {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0.15rem 0 0.4rem;
+  line-height: 1.5;
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+  padding-left: 10px;
+}
+
 .exp-company {
   font-size: 0.9rem;
   color: #888;
