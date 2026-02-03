@@ -421,67 +421,62 @@ body > .container {
   padding-bottom: 0;
 }
 
-.experience-header {
+.exp-header {
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 1.25rem;
+  gap: 24px;
   margin-bottom: 0;
 }
 
-.experience-icon {
-  flex-shrink: 0;
+.exp-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  min-width: 0;
+}
+
+.exp-logo {
   width: 64px;
   height: 64px;
   object-fit: contain;
+  flex: 0 0 auto;
   border-radius: 10px;
   opacity: 0.9;
-  /* Fallback when image fails to load */
   background-color: #252525;
   border: 1px solid #2a2a2a;
 }
 
-@media (max-width: 600px) {
-  .experience-header {
-    gap: 1rem;
-  }
-
-  .experience-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-  }
-}
-
-.experience-title-block {
-  flex: 1;
+.exp-titleblock {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
 }
 
-.exp-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.5rem;
+.exp-role-row {
   margin-bottom: 0.25rem;
 }
 
-.exp-header h3 {
+.exp-role {
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
   color: #fff;
 }
 
-.exp-date {
-  font-size: 0.85rem;
-  color: #666;
-}
-
-.exp-org {
+.exp-company {
   font-size: 0.9rem;
   color: #888;
   margin: 0 0 0.25rem;
+}
+
+.exp-dates {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: right;
+  white-space: nowrap;
+  opacity: 0.95;
+  flex-shrink: 0;
 }
 
 .exp-meta {
@@ -489,6 +484,32 @@ body > .container {
   color: #666;
   margin: 0 0 0.75rem;
   line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .exp-header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .exp-left {
+    gap: 16px;
+  }
+
+  .exp-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .exp-dates {
+    width: 100%;
+    text-align: left;
+    white-space: normal;
+    order: 3;
+    padding-top: 0.25rem;
+    border-top: 1px solid #252525;
+  }
 }
 
 .exp-desc,
