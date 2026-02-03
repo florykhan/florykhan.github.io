@@ -542,7 +542,7 @@ body[data-narrative="gallery"] .narrative-key-takeaway {
 }
 
 /* SFU narrative: justified text for readability */
-body[data-narrative="sfu"] .narrative-intro .narrative-intro-text,
+body[data-narrative="sfu"] .narrative-dated-body p,
 body[data-narrative="sfu"] .narrative-content .narrative-section p {
   text-align: justify !important;
   hyphens: auto;

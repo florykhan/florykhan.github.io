@@ -7,10 +7,49 @@
   <link rel="stylesheet" href="../../styles/main.css">
   <style>
     /* Justified narrative text (page-level so it always applies on this page) */
-    .narrative-intro .narrative-intro-text,
+    .narrative-dated-body p,
     .narrative-content .narrative-section p {
       text-align: justify !important;
       hyphens: auto;
+    }
+    /* Dated narrative sections: vertical guide line and section labels */
+    .narrative-dated {
+      margin-bottom: 2.5rem;
+    }
+    .narrative-dated-block {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 2.25rem;
+    }
+    .narrative-dated-block:last-of-type {
+      margin-bottom: 0;
+    }
+    .narrative-dated-block::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .narrative-dated-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.6rem;
+    }
+    .narrative-dated-body p {
+      font-size: 0.95rem;
+      color: #b0b0b0;
+      line-height: 1.65;
+      margin: 0 0 0.85rem;
+    }
+    .narrative-dated-body p:last-child {
+      margin-bottom: 0;
     }
   </style>
 </head>
@@ -34,13 +73,28 @@
       <h1 class="narrative-title">SFU — Computer Science + Math foundations</h1>
     </header>
 
-    <section class="narrative-intro">
-      <p class="narrative-intro-text">Before coming to Canada, and even during my first semesters at Fraser International College, I wasn’t very strong at programming. I had learned the basics of Python and C, but only to pass classes, I had never built real projects or understood how programming could fit into a future career.</p>
-      <p class="narrative-intro-text">After transferring to SFU, even during my first semester, I completed assignments without really seeing the bigger picture. I was focused on finishing tasks rather than understanding how they connected to real-world software or engineering roles.</p>
-      <p class="narrative-intro-text">At the same time, I was already working as a Data Analyst at Synkron. That role gave me valuable experience working with structured data and real business problems. Through my work at Synkron, I was also exposed to machine learning systems in practice. However, I interacted with them only as input–output tools. Data went in, predictions came out. I didn’t know how models were trained, how they were tuned, or how they were built from scratch. It was a data-focused role, not a software or machine learning engineering role.</p>
-      <p class="narrative-intro-text">Everything started to change in the summer of 2025, when I took Introduction to Software Engineering at SFU. That was the first time I worked on a real project from start to finish. Around that period, I also started meeting more people through workshops and student communities, and I became very aware of how far behind I felt — many people already had strong programming backgrounds, large projects, or internship experience.</p>
-      <p class="narrative-intro-text">There was a moment of real self-doubt. But instead of trying to compete with others, I realized I needed to focus on becoming better compared to who I was before. That shift in mindset marked the beginning of a much more intentional and disciplined approach to learning.</p>
-      <p class="narrative-intro-text">SFU marked the point where my interest in technology became structured and intentional. What started as curiosity quickly turned into building, breaking, and refining real systems — from software engineering workflows to data-driven projects and machine learning pipelines. This stage is about learning how things work under the hood and applying that knowledge in practical, collaborative settings.</p>
+    <section class="narrative-dated" aria-label="Narrative by period">
+      <article class="narrative-dated-block">
+        <span class="narrative-dated-label">Before 2025</span>
+        <div class="narrative-dated-body">
+          <p>Before coming to Canada, and later during my first year at Fraser International College, I was not very strong at programming. I had learned the basics of Python and C, but only to pass classes. I had never built real projects or understood how programming could fit into a future career.</p>
+        </div>
+      </article>
+      <article class="narrative-dated-block">
+        <span class="narrative-dated-label">Spring 2025</span>
+        <div class="narrative-dated-body">
+          <p>After transferring to SFU, even during my first semester there, I completed assignments without really seeing the bigger picture. I was focused on finishing tasks rather than understanding how they connected to real-world software or engineering roles.</p>
+          <p>During that period, I also started working as a Data Analyst at Synkron. That role gave me valuable experience working with structured data and real business problems. Through my work at Synkron, I was also exposed to machine learning systems in practice. However, I interacted with them only as input–output tools. Data went in, predictions came out. I didn’t know how models were trained, how they were tuned, or how they were built from scratch. It was a data-focused role, not a software or machine learning engineering one.</p>
+        </div>
+      </article>
+      <article class="narrative-dated-block">
+        <span class="narrative-dated-label">Summer 2025 and After</span>
+        <div class="narrative-dated-body">
+          <p>Everything started to change in the summer of 2025, when I took Introduction to Software Engineering course at SFU. That was the first time I worked on a real project from start to finish. Around that period, I also started meeting more people through workshops and student communities, and I became very aware of how far behind I felt — many people already had strong programming backgrounds, large projects, or internship experience.</p>
+          <p>There was a moment of real self-doubt. But instead of trying to compete with others, I realized I needed to focus on becoming better compared to who I was before. That shift in mindset marked the beginning of a much more intentional and disciplined approach to learning.</p>
+          <p>SFU marked the point where my interest in technology became structured and intentional. What started as curiosity quickly turned into building, breaking, and refining real systems — from software engineering workflows to data-driven projects and machine learning pipelines. This stage is about learning how things work under the hood and applying that knowledge in practical, collaborative settings.</p>
+        </div>
+      </article>
     </section>
 
     <div class="narrative-content">
