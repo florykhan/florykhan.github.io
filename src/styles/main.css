@@ -414,6 +414,21 @@ body > .container {
   transform-origin: left;
 }
 
+.narrative-title-link-gallery {
+  transform: none;
+  transition: color 0.2s ease;
+}
+
+.narrative-title-link-gallery:hover,
+.narrative-title-link-gallery:focus-visible {
+  color: #7ab8e8;
+  transform: none;
+}
+
+.narrative-title-link-gallery:focus {
+  outline: none;
+}
+
 .narrative-title-link:focus {
   outline: none;
 }
