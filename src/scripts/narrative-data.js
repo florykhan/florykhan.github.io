@@ -3,11 +3,11 @@
  * Update this list to change both the timeline order and page navigation.
  */
 const NARRATIVE_ROUTES = [
-  { slug: 'gallery', path: './narrative/gallery.html' },
-  { slug: 'sfu', path: './narrative/sfu.html' },
-  { slug: 'synkron', path: './narrative/synkron.html' },
-  { slug: 'projects', path: './narrative/projects.html' },
-  { slug: 'next', path: './narrative/next.html' }
+  { slug: 'gallery', page: 'gallery.html', home: './narrative/gallery.html' },
+  { slug: 'sfu', page: 'sfu.html', home: './narrative/sfu.html' },
+  { slug: 'synkron', page: 'synkron.html', home: './narrative/synkron.html' },
+  { slug: 'projects', page: 'projects.html', home: './narrative/projects.html' },
+  { slug: 'next', page: 'next.html', home: './narrative/next.html' }
 ];
 
 const NARRATIVE_ROUTE_MAP = {};
@@ -17,10 +17,17 @@ const NARRATIVE_STEPS = NARRATIVE_ROUTES.map(function (route, index, list) {
   const next = index < list.length - 1 ? list[index + 1].slug : null;
   const step = {
     slug: route.slug,
-    path: route.path,
+    page: route.page,
+    home: route.home,
     prev: prev,
     next: next
   };
   NARRATIVE_ROUTE_MAP[route.slug] = step;
   return step;
 });
+
+if (typeof window !== 'undefined') {
+  window.NARRATIVE_ROUTES = NARRATIVE_ROUTES;
+  window.NARRATIVE_ROUTE_MAP = NARRATIVE_ROUTE_MAP;
+  window.NARRATIVE_STEPS = NARRATIVE_STEPS;
+}

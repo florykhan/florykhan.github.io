@@ -16,6 +16,15 @@
     return null;
   }
 
+  function resolvePage(slugName) {
+    if (!slugName) return null;
+    if (typeof NARRATIVE_ROUTE_MAP !== 'undefined' && NARRATIVE_ROUTE_MAP[slugName]) {
+      const page = NARRATIVE_ROUTE_MAP[slugName].page;
+      if (page) return page;
+    }
+    return slugName + '.html';
+  }
+
   const step = getStep(slug);
   if (!step) return;
 
@@ -31,16 +40,18 @@
   const nextEl = document.getElementById('narrative-next');
 
   if (prevEl) {
-    if (step.prev) {
-      prevEl.href = step.prev + '.html';
+    const prevHref = resolvePage(step.prev);
+    if (prevHref) {
+      prevEl.href = prevHref;
     } else {
       replaceWithDisabled(prevEl, prevEl.textContent);
     }
   }
 
   if (nextEl) {
-    if (step.next) {
-      nextEl.href = step.next + '.html';
+    const nextHref = resolvePage(step.next);
+    if (nextHref) {
+      nextEl.href = nextHref;
     } else {
       replaceWithDisabled(nextEl, nextEl.textContent);
     }
