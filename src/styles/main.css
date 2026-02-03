@@ -411,40 +411,45 @@ body > .container {
   gap: 1.5rem;
 }
 
-.exp-entry {
+.experience-item.exp-entry {
   padding-bottom: 1.5rem;
   border-bottom: 1px solid #252525;
 }
 
-.exp-entry:last-child {
+.experience-item.exp-entry:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-.exp-top {
+.experience-header {
   display: flex;
-  gap: 1rem;
   align-items: flex-start;
+  gap: 1.25rem;
   margin-bottom: 0;
 }
 
-.exp-icon {
+.experience-icon {
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
+  border-radius: 10px;
   opacity: 0.9;
-  vertical-align: middle;
 }
 
 @media (max-width: 600px) {
-  .exp-icon {
-    width: 24px;
-    height: 24px;
+  .experience-header {
+    gap: 1rem;
+  }
+
+  .experience-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
   }
 }
 
-.exp-header-block {
+.experience-title-block {
   flex: 1;
   min-width: 0;
 }
