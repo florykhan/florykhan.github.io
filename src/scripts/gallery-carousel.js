@@ -56,4 +56,20 @@
       else next();
     }
   });
+
+  function isEditableElement(el) {
+    if (!el || !el.tagName) return false;
+    var tag = el.tagName.toUpperCase();
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return true;
+    if (el.isContentEditable) return true;
+    return false;
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    if (isEditableElement(document.activeElement)) return;
+    e.preventDefault();
+    if (e.key === 'ArrowLeft') prev();
+    else next();
+  });
 })();

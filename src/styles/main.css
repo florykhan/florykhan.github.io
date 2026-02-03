@@ -573,6 +573,13 @@ body > .container {
   background-color: #7ab8e8;
 }
 
+.gallery-carousel-keyboard-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  color: #555;
+  text-align: center;
+}
+
 @media (max-width: 600px) {
   .gallery-carousel-viewport {
     padding: 0 1rem;
