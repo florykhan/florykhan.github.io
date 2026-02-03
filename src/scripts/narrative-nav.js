@@ -46,7 +46,7 @@
     if (prevHref) {
       prevEl.href = prevHref;
     } else {
-      prevEl.parentNode.removeChild(prevEl);
+      prevEl.remove();
     }
   }
 
@@ -55,7 +55,7 @@
     if (nextHref) {
       nextEl.href = nextHref;
     } else {
-      nextEl.parentNode.removeChild(nextEl);
+      nextEl.remove();
     }
   }
 
