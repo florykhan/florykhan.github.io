@@ -42,6 +42,29 @@
       </section>
     </div>
 
+    <section class="gallery-carousel" aria-label="Gallery images">
+      <div class="gallery-carousel-viewport" tabindex="0">
+        <button type="button" class="gallery-carousel-arrow gallery-carousel-prev" aria-label="Previous image">←</button>
+        <div class="gallery-carousel-track">
+          <div class="gallery-carousel-slide active"><img src="../../assets/images/narrative/gallery/1.png" alt="Gallery image 1"></div>
+          <div class="gallery-carousel-slide"><img src="../../assets/images/narrative/gallery/2.jpg" alt="Gallery image 2"></div>
+          <div class="gallery-carousel-slide"><img src="../../assets/images/narrative/gallery/3.JPG" alt="Gallery image 3"></div>
+          <div class="gallery-carousel-slide"><img src="../../assets/images/narrative/gallery/4.png" alt="Gallery image 4"></div>
+          <div class="gallery-carousel-slide"><img src="../../assets/images/narrative/gallery/5.png" alt="Gallery image 5"></div>
+          <div class="gallery-carousel-slide"><img src="../../assets/images/narrative/gallery/6.jpg" alt="Gallery image 6"></div>
+        </div>
+        <button type="button" class="gallery-carousel-arrow gallery-carousel-next" aria-label="Next image">→</button>
+      </div>
+      <div class="gallery-carousel-dots" role="tablist" aria-label="Image selection">
+        <button type="button" class="gallery-carousel-dot active" role="tab" aria-selected="true" data-index="0" aria-label="Show image 1"></button>
+        <button type="button" class="gallery-carousel-dot" role="tab" aria-selected="false" data-index="1" aria-label="Show image 2"></button>
+        <button type="button" class="gallery-carousel-dot" role="tab" aria-selected="false" data-index="2" aria-label="Show image 3"></button>
+        <button type="button" class="gallery-carousel-dot" role="tab" aria-selected="false" data-index="3" aria-label="Show image 4"></button>
+        <button type="button" class="gallery-carousel-dot" role="tab" aria-selected="false" data-index="4" aria-label="Show image 5"></button>
+        <button type="button" class="gallery-carousel-dot" role="tab" aria-selected="false" data-index="5" aria-label="Show image 6"></button>
+      </div>
+    </section>
+
     <nav class="narrative-prev-next" aria-label="Narrative navigation">
       <a id="narrative-prev" href="#" class="narrative-btn narrative-btn-prev">← Previous</a>
       <a id="narrative-next" href="#" class="narrative-btn narrative-btn-next">Next →</a>
@@ -50,5 +73,6 @@
 
   <script src="../../scripts/narrative-data.js"></script>
   <script src="../../scripts/narrative-nav.js"></script>
+  <script src="../../scripts/gallery-carousel.js"></script>
 </body>
 </html>
