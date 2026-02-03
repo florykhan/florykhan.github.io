@@ -436,15 +436,37 @@ body > .container {
   min-width: 0;
 }
 
+.exp-logo-link {
+  flex: 0 0 auto;
+  display: block;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.15s ease;
+}
+
+.exp-logo-link:hover,
+.exp-logo-link:focus-visible {
+  opacity: 1;
+}
+
+.exp-logo-link:focus {
+  outline: none;
+}
+
+.exp-logo-link:focus-visible {
+  outline: 2px solid rgba(122, 184, 232, 0.6);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
 .exp-logo {
   width: 64px;
   height: 64px;
   object-fit: contain;
-  flex: 0 0 auto;
   border-radius: 10px;
-  opacity: 0.9;
   background-color: #252525;
   border: 1px solid #2a2a2a;
+  display: block;
 }
 
 .exp-titleblock {
@@ -468,6 +490,26 @@ body > .container {
   font-size: 0.9rem;
   color: #888;
   margin: 0 0 0.25rem;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  display: inline-block;
+  max-width: fit-content;
+}
+
+.exp-company:hover,
+.exp-company:focus-visible {
+  color: #a0a0a0;
+  text-decoration: underline;
+}
+
+.exp-company:focus {
+  outline: none;
+}
+
+.exp-company:focus-visible {
+  outline: 2px solid rgba(122, 184, 232, 0.6);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .exp-dates {
