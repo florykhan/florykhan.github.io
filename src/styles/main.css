@@ -179,13 +179,35 @@ body > .container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: stretch;
-  gap: 0;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.timeline-item:nth-of-type(2) {
+  margin-top: 1.5rem;
+}
+
+.timeline-item:nth-of-type(3) {
+  margin-top: 3rem;
+}
+
+.timeline-item:nth-of-type(4) {
+  margin-top: 4.5rem;
+}
+
+.timeline-item:nth-of-type(5) {
+  margin-top: 6rem;
 }
 
 .timeline-node {
-  flex: 1;
-  min-width: 140px;
+  flex: 0 0 220px;
+  min-width: 200px;
   display: block;
   text-decoration: none;
   color: inherit;
@@ -246,8 +268,10 @@ body > .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.5rem;
-  min-width: 2rem;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0 0.75rem;
+  min-width: 2.75rem;
 }
 
 .timeline-arrow {
@@ -266,9 +290,18 @@ body > .container {
   .timeline {
     flex-direction: column;
     align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-top: 0 !important;
   }
 
   .timeline-node {
+    flex: 1 1 auto;
     min-width: 0;
   }
 
@@ -276,6 +309,8 @@ body > .container {
     padding: 0.5rem 0;
     min-height: 1.5rem;
     min-width: auto;
+    flex-direction: row;
+    gap: 0.35rem;
   }
 
   .timeline-arrow-h {
