@@ -44,30 +44,10 @@
     });
   });
 
-  carousel.addEventListener('keydown', function (e) {
-    if (e.target.closest('.gallery-carousel-dots') && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
-      e.preventDefault();
-      if (e.key === 'ArrowLeft') prev();
-      else next();
-    }
-    if (e.target.closest('.gallery-carousel-viewport') && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
-      e.preventDefault();
-      if (e.key === 'ArrowLeft') prev();
-      else next();
-    }
-  });
-
-  function isEditableElement(el) {
-    if (!el || !el.tagName) return false;
-    var tag = el.tagName.toUpperCase();
-    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return true;
-    if (el.isContentEditable) return true;
-    return false;
-  }
-
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-    if (isEditableElement(document.activeElement)) return;
+    var active = document.activeElement;
+    if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.tagName === 'SELECT' || active.isContentEditable)) return;
     e.preventDefault();
     if (e.key === 'ArrowLeft') prev();
     else next();
