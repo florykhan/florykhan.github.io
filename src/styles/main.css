@@ -118,8 +118,8 @@ body > .container {
 }
 
 .hero-photo {
-  width: 175px;
-  height: 175px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
@@ -419,6 +419,34 @@ body > .container {
 .exp-entry:last-child {
   border-bottom: none;
   padding-bottom: 0;
+}
+
+.exp-top {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+.exp-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  opacity: 0.9;
+  vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+  .exp-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.exp-header-block {
+  flex: 1;
+  min-width: 0;
 }
 
 .exp-header {
@@ -856,8 +884,8 @@ main h1 {
 
   .hero-photo {
     order: 1;
-    width: 135px;
-    height: 135px;
+    width: 120px;
+    height: 120px;
     margin-bottom: 0.5rem;
   }
 
