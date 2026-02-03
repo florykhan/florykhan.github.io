@@ -366,6 +366,34 @@ body > .container {
   margin: 0;
 }
 
+.narrative-intro {
+  margin-bottom: 2.5rem;
+}
+
+.narrative-intro-text {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+
+.narrative-intro-text:last-of-type {
+  margin-bottom: 1.25rem;
+}
+
+.narrative-key-takeaway {
+  font-size: 0.875rem;
+  color: #888;
+  line-height: 1.5;
+  margin: 0;
+  border-left: 2px solid rgba(255, 255, 255, 0.35);
+  padding-left: 0.75rem;
+}
+
+.narrative-key-takeaway-label {
+  color: #777;
+}
+
 .narrative-prev-next {
   display: flex;
   justify-content: space-between;
