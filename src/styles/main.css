@@ -563,15 +563,70 @@ body[data-narrative="sfu"] .narrative-content .narrative-section p {
   line-height: 1.7;
 }
 
+/* Narrative prev/next: side nav on desktop, hidden on small screens */
 .narrative-prev-next {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #252525;
+  display: contents;
 }
 
+body[data-narrative] .narrative-btn-prev,
+body[data-narrative] .narrative-btn-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(122, 184, 232, 0.85);
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0.5rem 0.25rem;
+  text-decoration: none;
+  opacity: 0.45;
+  transition: opacity 0.2s ease, color 0.15s ease;
+}
+
+body[data-narrative] .narrative-btn-prev {
+  left: 1.25rem;
+}
+
+body[data-narrative] .narrative-btn-next {
+  right: 1.25rem;
+}
+
+body[data-narrative] .narrative-btn:hover,
+body[data-narrative] .narrative-btn:focus-visible {
+  opacity: 0.95;
+  color: #a0d4f8;
+}
+
+body[data-narrative] .narrative-btn:focus {
+  outline: none;
+}
+
+body[data-narrative] .narrative-btn:focus-visible {
+  outline: 2px solid rgba(122, 184, 232, 0.5);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+body[data-narrative] .narrative-btn-disabled {
+  color: #555;
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  body[data-narrative] .narrative-btn-prev,
+  body[data-narrative] .narrative-btn-next {
+    display: none;
+  }
+}
+
+/* Legacy bottom-nav styles (non-narrative pages, if any) */
 .narrative-btn {
   display: inline-block;
   font-family: inherit;

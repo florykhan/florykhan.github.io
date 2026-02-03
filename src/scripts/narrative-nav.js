@@ -66,4 +66,21 @@
       replaceWithDisabled(nextEl, nextEl.textContent);
     }
   }
+
+  function setupKeyboardNav() {
+    document.addEventListener('keydown', function (e) {
+      if (e.target && (e.target.closest('input') || e.target.closest('textarea') || e.target.closest('[contenteditable="true"]'))) return;
+      var prev = document.getElementById('narrative-prev');
+      var next = document.getElementById('narrative-next');
+      if (e.key === 'ArrowLeft' && prev && prev.href && prev.href !== '#' && !prev.hasAttribute('aria-disabled')) {
+        e.preventDefault();
+        window.location.href = prev.href;
+      }
+      if (e.key === 'ArrowRight' && next && next.href && next.href !== '#' && !next.hasAttribute('aria-disabled')) {
+        e.preventDefault();
+        window.location.href = next.href;
+      }
+    });
+  }
+  setupKeyboardNav();
 })();
