@@ -46,9 +46,11 @@
 
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-    var active = document.activeElement;
-    if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.tagName === 'SELECT' || active.isContentEditable)) return;
+    var target = e.target && e.target.nodeType === 1 ? e.target : null;
+    if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.isContentEditable)) return;
+    if (!target || !target.closest('.gallery-carousel')) return;
     e.preventDefault();
+    e.stopPropagation();
     if (e.key === 'ArrowLeft') prev();
     else next();
   });

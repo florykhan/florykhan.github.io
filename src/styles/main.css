@@ -563,7 +563,7 @@ body[data-narrative="sfu"] .narrative-content .narrative-section p {
   line-height: 1.7;
 }
 
-/* Narrative prev/next: side nav on desktop, hidden on small screens */
+/* Narrative prev/next: side nav on desktop (editorial margin-note style), hidden on small screens */
 .narrative-prev-next {
   display: contents;
 }
@@ -572,34 +572,47 @@ body[data-narrative] .narrative-btn-prev,
 body[data-narrative] .narrative-btn-next {
   position: fixed;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotate(var(--narrative-nav-rotate, 0deg));
   z-index: 50;
   display: inline-block;
   font-family: inherit;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: rgba(122, 184, 232, 0.85);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(200, 175, 130, 0.55);
   background: none;
   border: none;
   border-radius: 0;
   padding: 0.5rem 0.25rem;
   text-decoration: none;
-  opacity: 0.45;
-  transition: opacity 0.2s ease, color 0.15s ease;
+  opacity: 0.4;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 body[data-narrative] .narrative-btn-prev {
   left: 1.25rem;
+  --narrative-nav-rotate: -90deg;
 }
 
 body[data-narrative] .narrative-btn-next {
   right: 1.25rem;
+  --narrative-nav-rotate: 90deg;
 }
 
-body[data-narrative] .narrative-btn:hover,
-body[data-narrative] .narrative-btn:focus-visible {
-  opacity: 0.95;
-  color: #a0d4f8;
+body[data-narrative] .narrative-btn-prev:hover,
+body[data-narrative] .narrative-btn-prev:focus-visible,
+body[data-narrative] .narrative-btn-next:hover,
+body[data-narrative] .narrative-btn-next:focus-visible {
+  opacity: 0.75;
+}
+
+body[data-narrative] .narrative-btn-prev:hover,
+body[data-narrative] .narrative-btn-prev:focus-visible {
+  transform: translateY(-50%) translateX(-4px) rotate(-90deg);
+}
+
+body[data-narrative] .narrative-btn-next:hover,
+body[data-narrative] .narrative-btn-next:focus-visible {
+  transform: translateY(-50%) translateX(4px) rotate(90deg);
 }
 
 body[data-narrative] .narrative-btn:focus {
@@ -607,7 +620,7 @@ body[data-narrative] .narrative-btn:focus {
 }
 
 body[data-narrative] .narrative-btn:focus-visible {
-  outline: 2px solid rgba(122, 184, 232, 0.5);
+  outline: 2px solid rgba(200, 175, 130, 0.5);
   outline-offset: 4px;
   border-radius: 2px;
 }

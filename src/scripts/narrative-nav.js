@@ -69,7 +69,10 @@
 
   function setupKeyboardNav() {
     document.addEventListener('keydown', function (e) {
-      if (e.target && (e.target.closest('input') || e.target.closest('textarea') || e.target.closest('[contenteditable="true"]'))) return;
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      var target = e.target && e.target.nodeType === 1 ? e.target : null;
+      if (target && (target.closest('input') || target.closest('textarea') || target.closest('select') || target.closest('[contenteditable="true"]'))) return;
+      if (slug === 'gallery' && target && target.closest('.gallery-carousel')) return;
       var prev = document.getElementById('narrative-prev');
       var next = document.getElementById('narrative-next');
       if (e.key === 'ArrowLeft' && prev && prev.href && prev.href !== '#' && !prev.hasAttribute('aria-disabled')) {
