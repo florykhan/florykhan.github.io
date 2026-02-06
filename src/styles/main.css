@@ -543,6 +543,80 @@ body > .container {
   color: #777;
 }
 
+/* Dated narrative sections: timeline labels on left, vertical guide line (reusable across narrative pages) */
+.narrative-dated {
+  margin-bottom: 2.5rem;
+}
+
+.narrative-dated-block {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.narrative-dated-block:last-of-type {
+  margin-bottom: 0;
+}
+
+.narrative-dated-block::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.narrative-dated-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+}
+
+.narrative-dated-body p {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  line-height: 1.65;
+  margin: 0 0 0.85rem;
+}
+
+.narrative-dated-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Right-side bracket ] takeaway block (reusable: add .narrative-dated-emphasis-purple for purple accent) */
+.narrative-dated-emphasis {
+  position: relative;
+  padding-right: 1rem;
+}
+
+.narrative-dated-emphasis::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.5rem;
+  border-right: 2px solid rgba(200, 175, 130, 0.5);
+  border-top: 2px solid rgba(200, 175, 130, 0.5);
+  border-bottom: 2px solid rgba(200, 175, 130, 0.5);
+}
+
+.narrative-dated-emphasis p:last-child {
+  margin-bottom: 0;
+}
+
+.narrative-dated-emphasis-purple.narrative-dated-emphasis::after {
+  border-right-color: rgba(168, 85, 247, 0.5);
+  border-top-color: rgba(168, 85, 247, 0.5);
+  border-bottom-color: rgba(168, 85, 247, 0.5);
+}
+
 /* Gallery narrative: justified text for readability */
 body[data-narrative="gallery"] .narrative-intro-text {
   text-align: justify;
@@ -561,6 +635,14 @@ body[data-narrative="sfu"] .narrative-content .narrative-section p {
   text-align: justify !important;
   hyphens: auto;
   line-height: 1.7;
+}
+
+/* Synkron narrative: justified text for readability */
+body[data-narrative="synkron"] .narrative-dated-body p,
+body[data-narrative="synkron"] .narrative-content .narrative-section p {
+  text-align: justify !important;
+  hyphens: auto;
+  line-height: 1.65;
 }
 
 /* Narrative prev/next: side nav on desktop (editorial margin-note style), hidden on small screens */
