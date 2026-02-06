@@ -1067,6 +1067,22 @@ body[data-narrative] .narrative-btn-disabled {
   }
 }
 
+.post-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.post-card-link:focus {
+  outline: none;
+}
+
+.post-card-link:focus-visible .post-card {
+  outline: 2px solid rgba(122, 184, 232, 0.6);
+  outline-offset: 2px;
+}
+
 .post-card {
   background-color: #1a1a1a;
   border: 1px solid #2a2a2a;
@@ -1076,60 +1092,79 @@ body[data-narrative] .narrative-btn-disabled {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
-.post-card:hover {
+.post-card-link:hover .post-card,
+.post-card-link:focus-visible .post-card {
   border-color: #3a3a3a;
   background-color: #1e1e1e;
 }
 
 @media (hover: hover) {
-  .post-card:hover {
+  .post-card-link:hover .post-card,
+  .post-card-link:focus-visible .post-card {
     transform: scale(1.02);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
 }
 
-.post-card h3 {
+.post-image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: -1.25rem -1.5rem 1rem -1.5rem;
+}
+
+.post-card-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.post-card-link:hover .post-card-image {
+  transform: scale(1.02);
+}
+
+.external-link-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  object-fit: contain;
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.post-card-link:hover .external-link-icon {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.post-card-title {
   font-size: 1rem;
   font-weight: 600;
   margin: 0 0 0.5rem;
   color: #fff;
 }
 
-.post-excerpt {
+.post-card-description {
   font-size: 0.85rem;
   color: #a0a0a0;
   margin: 0 0 0.75rem;
   line-height: 1.5;
 }
 
-.post-date {
+.post-card-year {
   display: block;
   font-size: 0.75rem;
   color: #666;
-  margin-bottom: 0.75rem;
-}
-
-.post-link {
-  display: inline-block;
-  color: #7ab8e8;
-  text-decoration: none;
-  font-size: 0.85rem;
-  transition: color 0.15s ease;
-}
-
-.post-link:hover {
-  color: #a0d4f8;
-  text-decoration: underline;
-}
-
-.post-link:focus {
-  outline: none;
-}
-
-.post-link:focus-visible {
-  outline: 2px solid rgba(122, 184, 232, 0.6);
-  outline-offset: 2px;
-  border-radius: 2px;
+  margin: 0;
 }
 
 /* ========================================
