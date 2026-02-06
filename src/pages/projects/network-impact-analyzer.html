@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Network Impact Analyzer | Ilian Khankhalaev</title>
+  <title>TelusGuardAI — Network Impact Analyzer | Ilian Khankhalaev</title>
   <link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
@@ -21,43 +21,72 @@
     <a href="../projects.html" class="project-back">← Back to Projects</a>
 
     <header class="project-header">
-      <h1 class="project-title">Network Impact Analyzer</h1>
-      <p class="project-summary">Placeholder: Tool for analyzing network topology and simulating impact of node failures.</p>
+      <h1 class="project-title">TelusGuardAI — Network Impact Analyzer</h1>
+      <p class="project-summary">AI-powered network impact analysis system that detects and analyzes service disruptions during events using a multi-agent orchestration framework. Processes natural language queries, gathers intelligence from web and weather sources, and generates geospatial impact assessments.</p>
       <div class="project-meta-links">
-        <a href="#">Live Demo</a>
-        <a href="#">GitHub Repo</a>
-        <a href="../projects.html">← Back to Projects</a>
+        <a href="https://github.com/florykhan/ai-at-the-edge-hackathon" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        <a href="https://youtu.be/M67bbdQUQ5Q" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
       </div>
     </header>
 
     <section class="project-detail-section">
-      <h2>Overview</h2>
-      <p>Placeholder overview text for the project.</p>
+      <div class="project-video-wrapper">
+        <iframe src="https://www.youtube.com/embed/M67bbdQUQ5Q" title="TelusGuardAI Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
     </section>
 
     <section class="project-detail-section">
-      <h2>Problem &amp; Motivation</h2>
-      <p>Placeholder text describing the problem and motivation.</p>
+      <h2>Problem &amp; Context</h2>
+      <p>Network Operations Center (NOC) engineers need rapid, data-driven network outage analysis during weather events, infrastructure failures, and other service disruptions. This system addresses that by automating network impact analysis — processing natural language queries, aggregating multi-source intelligence (web searches, weather data), and generating geospatial impact assessments with affected areas, severity levels, and confidence scores for prioritizing response efforts.</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>What I Built</h2>
-      <p>Placeholder text describing what was built.</p>
+      <h2>What It Does</h2>
+      <ul class="project-feature-list">
+        <li>Multi-agent AI orchestration: three specialized agents parse queries, gather intelligence, and analyze geographic impact</li>
+        <li>Natural language query processing (e.g., &quot;What areas were affected by the ice storm in Toronto?&quot;)</li>
+        <li>Intelligent web search and weather data integration (OpenWeatherMap)</li>
+        <li>Geospatial reasoning with precise coordinates and impact radii</li>
+        <li>Interactive Leaflet map with tower locations, impact zones, and heatmaps</li>
+        <li>Real-time KPI monitoring for individual towers</li>
+        <li>Caching (5-minute TTL) and confidence scoring for each affected area</li>
+        <li>Severity assessment: critical, high, moderate, or low</li>
+      </ul>
     </section>
 
     <section class="project-detail-section">
       <h2>Tech Stack</h2>
-      <p>Placeholder text for technologies used.</p>
+      <div class="tech-tags">
+        <span>React 19</span>
+        <span>Vite</span>
+        <span>Leaflet / React Leaflet</span>
+        <span>Flask</span>
+        <span>Python 3.12</span>
+        <span>Gunicorn</span>
+        <span>aiohttp</span>
+        <span>Gemma</span>
+        <span>DeepSeek</span>
+        <span>GPT</span>
+        <span>OpenWeatherMap</span>
+        <span>Render</span>
+        <span>GitHub Pages</span>
+      </div>
     </section>
 
     <section class="project-detail-section">
-      <h2>Results / Visuals</h2>
-      <p class="results-placeholder">Placeholder for plots, screenshots, or visual results.</p>
+      <h2>Architecture / How It Works</h2>
+      <p>Three-tier architecture: Frontend (React + Vite, Leaflet maps), Backend (Flask REST API, multi-agent orchestrator, in-memory cache), and AI Agent Layer. Three specialized agents work in sequence:</p>
+      <ul class="project-feature-list">
+        <li><strong>Event Intelligence Agent</strong> (Gemma): Parses NL queries, extracts metadata, generates search queries</li>
+        <li><strong>Web Intelligence Agent</strong>: Executes parallel web searches, fetches weather data, aggregates results</li>
+        <li><strong>Geospatial Reasoning Agent</strong> (GPT): Analyzes data, identifies affected areas with coordinates, severity, and confidence</li>
+      </ul>
+      <p>Data flows: User query → Event Intelligence → Web Intelligence → Geospatial Reasoning → Orchestrator → Cache → Frontend visualization.</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>Challenges &amp; Learnings</h2>
-      <p>Placeholder text for challenges and learnings.</p>
+      <h2>Key Takeaways</h2>
+      <p>Built for the AI at the Edge Hackathon, this project demonstrates production-quality multi-agent AI orchestration for network impact analysis. The modular architecture — with clear separation between frontend, backend, and AI agents — is designed to be extensible with real API integrations and additional data sources. Working with Telus AI Gateway and multiple LLM models (Gemma, DeepSeek, GPT) provided hands-on experience in coordinating AI agents for complex analytical tasks.</p>
     </section>
 
     <p style="margin-top: 2rem;">

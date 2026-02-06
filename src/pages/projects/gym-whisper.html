@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gym Whisper | Ilian Khankhalaev</title>
+  <title>GymWhisper | Ilian Khankhalaev</title>
   <link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
@@ -21,43 +21,62 @@
     <a href="../projects.html" class="project-back">← Back to Projects</a>
 
     <header class="project-header">
-      <h1 class="project-title">Gym Whisper</h1>
-      <p class="project-summary">Placeholder: A fitness tracking app with voice-guided workouts and progress analytics.</p>
+      <h1 class="project-title">GymWhisper — Voice-Powered Workout Tracking</h1>
+      <p class="project-summary">Hands-free workout logging through natural language voice input. Users tap a microphone, describe their workout in spoken words, and the app converts speech into structured workout data using AI — all running in the browser.</p>
       <div class="project-meta-links">
-        <a href="#">Live Demo</a>
-        <a href="#">GitHub Repo</a>
-        <a href="../projects.html">← Back to Projects</a>
+        <a href="https://florykhan.github.io/GymWhisper/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        <a href="https://github.com/florykhan/GymWhisper" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        <a href="https://youtu.be/8XV7nmV9WvE" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
       </div>
     </header>
 
     <section class="project-detail-section">
-      <h2>Overview</h2>
-      <p>Placeholder overview text for the project.</p>
+      <div class="project-video-wrapper">
+        <iframe src="https://www.youtube.com/embed/8XV7nmV9WvE" title="GymWhisper Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
     </section>
 
     <section class="project-detail-section">
-      <h2>Problem &amp; Motivation</h2>
-      <p>Placeholder text describing the problem and motivation.</p>
+      <h2>Problem &amp; Context</h2>
+      <p>Gym users often need to log exercises while at the gym without typing on their phone. The goal is to enable hands-free workout logging through voice input, converting natural language descriptions into structured workout data (exercise type, reps, weight) using AI. The project demonstrates how modern web APIs (speech recognition) can be combined with AI services (Google Gemini) to create intuitive, privacy-focused user experiences — all client-side with no backend persistence.</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>What I Built</h2>
-      <p>Placeholder text describing what was built.</p>
+      <h2>What It Does</h2>
+      <ul class="project-feature-list">
+        <li>Voice-based workout input using browser speech recognition API for hands-free logging</li>
+        <li>AI-powered transcription and parsing via Google Gemini API, converting natural language into structured CSV workout data</li>
+        <li>Bilingual support with language toggle (English/French)</li>
+        <li>Animated microphone interface with visual feedback during recording sessions</li>
+        <li>Workout panel for reviewing, editing, and finalizing workout entries before export</li>
+        <li>Workout history page for viewing past sessions and generating AI-powered performance reports</li>
+        <li>Client-side only application with no backend dependencies</li>
+        <li>Responsive design optimized for mobile and desktop</li>
+      </ul>
     </section>
 
     <section class="project-detail-section">
       <h2>Tech Stack</h2>
-      <p>Placeholder text for technologies used.</p>
+      <div class="tech-tags">
+        <span>React 19</span>
+        <span>React Router (HashRouter)</span>
+        <span>Google Gemini API</span>
+        <span>react-speech-recognition</span>
+        <span>Framer Motion</span>
+        <span>Lucide React</span>
+        <span>CSS (no framework)</span>
+        <span>GitHub Pages</span>
+      </div>
     </section>
 
     <section class="project-detail-section">
-      <h2>Results / Visuals</h2>
-      <p class="results-placeholder">Placeholder for plots, screenshots, or visual results.</p>
+      <h2>Architecture / How It Works</h2>
+      <p>The application is a single-page application (SPA) using React Router with HashRouter for GitHub Pages compatibility. All workout data is stored in React state and localStorage — there is no backend database. The frontend uses the Web Speech API for voice capture, then sends transcribed text to the Gemini API for structured parsing into exercise metadata (type, sets, reps, weight).</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>Challenges &amp; Learnings</h2>
-      <p>Placeholder text for challenges and learnings.</p>
+      <h2>Key Takeaways</h2>
+      <p>This project showcases AI integration in frontend applications — how combining speech recognition with LLMs can create intuitive, hands-free interfaces. Operating entirely client-side keeps the app lightweight and privacy-focused, while the bilingual and mobile-first design demonstrates attention to accessibility and real-world use cases.</p>
     </section>
 
     <p style="margin-top: 2rem;">
