@@ -1631,15 +1631,20 @@ main h1 {
 }
 
 /* Project page: responsive video embed (16:9) */
+/* Project detail: responsive YouTube/video embed — full width, 16:9, no white border */
 .project-detail .project-video-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  padding-bottom: 0;
+  height: auto;
+  min-height: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  border: none;
   overflow: hidden;
-  border-radius: 6px;
   background-color: #1a1a1a;
-  border: 1px solid #2a2a2a;
 }
 
 .project-detail .project-video-wrapper iframe {
@@ -1648,6 +1653,16 @@ main h1 {
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
+  border: none;
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+  .project-detail .project-video-wrapper {
+    aspect-ratio: none;
+    padding-bottom: 56.25%;
+    height: 0;
+  }
 }
 
 /* Project page: feature list */
