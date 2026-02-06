@@ -353,8 +353,7 @@
       <div class="container">
         <h2 class="section-title">Contact</h2>
         <p class="contact-intro">Have a question or want to connect? Send me a message and I'll get back as soon as I can.</p>
-        <!-- Replace example@email.com with your real email -->
-        <form class="contact-form" action="mailto:example@email.com" method="POST" enctype="text/plain">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/mykdyyny" method="POST">
           <label for="contact-name">Name</label>
           <input id="contact-name" type="text" name="name" autocomplete="name" required>
           <label for="contact-email">Email</label>
@@ -362,6 +361,7 @@
           <label for="contact-message">Message / Question</label>
           <textarea id="contact-message" name="message" rows="5" required></textarea>
           <button type="submit" class="contact-submit">Send</button>
+          <p id="contact-form-status" class="contact-form-status" aria-live="polite"></p>
         </form>
         <p class="contact-privacy">No spam — your message goes directly to my inbox.</p>
         <div class="contact-links">
@@ -379,5 +379,38 @@
       </div>
     </footer>
   </main>
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      var status = document.getElementById('contact-form-status');
+      if (!form || !status) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.textContent = '';
+        var url = form.getAttribute('action');
+        var body = JSON.stringify({
+          name: form.querySelector('[name="name"]').value,
+          email: form.querySelector('[name="email"]').value,
+          message: form.querySelector('[name="message"]').value
+        });
+        fetch(url, {
+          method: 'POST',
+          body: body,
+          headers: { 'Content-Type': 'application/json' }
+        })
+          .then(function (res) {
+            if (res.ok) {
+              status.textContent = 'Message sent ✅';
+              form.reset();
+            } else {
+              status.innerHTML = 'Something went wrong, please <a href="mailto:your@email.com">email me directly</a>.';
+            }
+          })
+          .catch(function () {
+            status.innerHTML = 'Something went wrong, please <a href="mailto:your@email.com">email me directly</a>.';
+          });
+      });
+    })();
+  </script>
 </body>
 </html>

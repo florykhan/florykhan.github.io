@@ -1388,6 +1388,21 @@ ul.exp-desc li:last-child {
   color: #0f0f0f;
 }
 
+.contact-form-status {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+.contact-form-status a {
+  color: #7ab8e8;
+  text-decoration: none;
+}
+
+.contact-form-status a:hover {
+  color: #a0d4f8;
+}
+
 .contact-privacy {
   font-size: 0.85rem;
   color: #666;
