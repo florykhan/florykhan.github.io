@@ -1441,7 +1441,7 @@ ul.exp-desc li:last-child {
   color: #b0b0b0;
   font-size: 1rem;
   margin: 0 0 1.5rem;
-  max-width: 36ch;
+  width: 100%;
 }
 
 .contact-form {
@@ -1542,6 +1542,12 @@ ul.exp-desc li:last-child {
 
 .contact-links a:hover {
   color: #a0d4f8;
+}
+
+@media (min-width: 900px) {
+  .contact-intro {
+    max-width: 700px;
+  }
 }
 
 /* ========================================
