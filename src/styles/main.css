@@ -1915,3 +1915,47 @@ main h1 {
     transform: none;
   }
 }
+
+/* ========================================
+   Type-on-scroll headings
+   ======================================== */
+
+.type-on-scroll {
+  /* min-width set by JS so layout doesn't jump during typing */
+}
+
+.type-on-scroll-text,
+.type-on-scroll-caret {
+  display: inline;
+}
+
+.type-on-scroll-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 1px;
+  background: currentColor;
+  vertical-align: text-bottom;
+  animation: type-on-scroll-caret-blink 1s step-end infinite;
+}
+
+.type-on-scroll-done .type-on-scroll-caret {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .type-on-scroll-caret {
+    animation: type-on-scroll-caret-blink 1s step-end infinite;
+  }
+}
+
+@keyframes type-on-scroll-caret-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
