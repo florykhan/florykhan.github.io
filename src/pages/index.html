@@ -37,7 +37,7 @@
     </section>
 
     <!-- Featured Projects -->
-    <section id="featured" class="section">
+    <section id="featured" class="section reveal">
       <div class="container">
         <h2 class="section-title">Featured Projects</h2>
         <div class="project-cards">
@@ -88,7 +88,7 @@
     </section>
 
     <!-- Narrative Timeline / My Path -->
-    <section id="timeline" class="section timeline-section">
+    <section id="timeline" class="section timeline-section reveal">
       <div class="container">
         <h2 class="section-title">Narrative Timeline</h2>
         <div class="timeline">
@@ -148,7 +148,7 @@
     </section>
 
     <!-- Skills / Tech Stack -->
-    <section id="skills" class="section">
+    <section id="skills" class="section reveal">
       <div class="container">
         <h2 class="section-title">Skills &amp; Tech Stack</h2>
         <div class="skills-grid">
@@ -184,7 +184,7 @@
     </section>
 
     <!-- Experience / Leadership -->
-    <section id="experience" class="section">
+    <section id="experience" class="section reveal">
       <div class="container">
         <h2 class="section-title">Experience</h2>
         <div class="experience-list">
@@ -242,7 +242,7 @@
     </section>
 
     <!-- Education -->
-    <section id="education" class="section">
+    <section id="education" class="section reveal">
       <div class="container">
         <h2 class="section-title">Education</h2>
         <div class="experience-list">
@@ -286,7 +286,7 @@
     </section>
 
     <!-- Volunteering -->
-    <section id="volunteering" class="section">
+    <section id="volunteering" class="section reveal">
       <div class="container">
         <h2 class="section-title">Volunteering</h2>
         <div class="experience-list">
@@ -318,7 +318,7 @@
     </section>
 
     <!-- Posts -->
-    <section id="posts" class="section">
+    <section id="posts" class="section reveal">
       <div class="container">
         <h2 class="section-title">Posts</h2>
         <p class="posts-intro">A few short write-ups and updates. Full posts are on LinkedIn.</p>
@@ -364,7 +364,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal">
       <div class="container">
         <h2 class="section-title">Contact</h2>
         <p class="contact-intro">Have a question or want to connect? Send me a message and I'll get back as soon as I can.</p>
@@ -394,6 +394,27 @@
       </div>
     </footer>
   </main>
+  <script>
+    (function () {
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var sections = document.querySelectorAll('.reveal');
+      if (prefersReducedMotion || !sections.length) {
+        sections.forEach(function (el) { el.classList.add('reveal-visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-visible');
+            }
+          });
+        },
+        { rootMargin: '0px 0px -60px 0px', threshold: 0.1, once: true }
+      );
+      sections.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
   <script>
     (function () {
       var form = document.getElementById('contact-form');

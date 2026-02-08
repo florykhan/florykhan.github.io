@@ -1887,3 +1887,31 @@ main h1 {
     align-self: stretch;
   }
 }
+
+/* ========================================
+   Scroll reveal animations
+   ======================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .reveal.reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
