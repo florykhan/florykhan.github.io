@@ -1836,6 +1836,13 @@ main h1 {
   flex-shrink: 0;
 }
 
+.project-card-logo {
+  display: block;
+  height: 1.25rem;
+  width: auto;
+  flex-shrink: 0;
+}
+
 .project-card-labels {
   display: flex;
   flex-wrap: wrap;
@@ -1873,6 +1880,11 @@ main h1 {
 .project-card-shipped {
   color: #d5f5e0;
   background-color: #2d4a35;
+}
+
+.project-card-research {
+  color: #c8e8f2;
+  background-color: #2a4048;
 }
 
 /* ========================================
