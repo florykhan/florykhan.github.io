@@ -1818,6 +1818,24 @@ main h1 {
 }
 
 /* Project card: status labels — same shape as tech tags */
+.project-card-labels-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card-labels-row .project-card-labels {
+  margin-bottom: 0;
+}
+
+.project-card-icon {
+  font-style: normal;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 .project-card-labels {
   display: flex;
   flex-wrap: wrap;
