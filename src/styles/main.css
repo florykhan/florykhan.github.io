@@ -1699,6 +1699,7 @@ main h1 {
   flex-shrink: 0;
   width: 16px;
   height: 16px;
+  border-radius: 3px;
   object-fit: contain;
 }
 
@@ -1842,11 +1843,31 @@ main h1 {
   margin: 0 0 1.5rem;
 }
 
+.project-detail .project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.project-detail .project-detail-labels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-detail .project-detail-labels .project-card-label {
+  margin-bottom: 0;
+}
+
 .project-detail .project-meta-links {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .project-detail .project-meta-links a {
@@ -1962,6 +1983,7 @@ main h1 {
 
 .project-card-logo-sfu {
   opacity: 0.80;
+  border-radius: 4px;
 }
 
 .project-card-labels {
