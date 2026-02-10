@@ -1817,14 +1817,44 @@ main h1 {
   margin-bottom: 0.5rem;
 }
 
-/* Project card: subtle Demo indicator */
-.project-card-demo {
+/* Project card: status labels — same shape as tech tags */
+.project-card-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card-labels .project-card-label {
+  margin-bottom: 0;
+}
+
+.project-card-label {
   display: inline-block;
-  font-size: 0.65rem;
-  color: #7ab8e8;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.project-card-demo {
+  color: #e8d5f5;
+  background-color: #3d2d4a;
+}
+
+.project-card-in-progress {
+  color: #f5e6d5;
+  background-color: #4a3d2d;
+}
+
+.project-card-report {
+  color: #d5e5f5;
+  background-color: #2d3d4a;
+}
+
+.project-card-shipped {
+  color: #d5f5e0;
+  background-color: #2d4a35;
 }
 
 /* ========================================
