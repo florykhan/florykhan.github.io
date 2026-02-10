@@ -21,7 +21,26 @@
     <section class="section projects-intro">
       <div class="container">
         <h1>Projects</h1>
-        <p class="projects-intro-text">Projects are grouped by type below. Click any card to open its detail page for overview, tech stack, results, and learnings.</p>
+        <div class="projects-intro-row">
+          <p class="projects-intro-text">Projects are grouped by type below. Click any card to open its detail page for overview, tech stack, results, and learnings.</p>
+          <div class="projects-info-wrap" id="projects-info-wrap">
+            <button type="button" class="projects-info-trigger" id="projects-info-trigger" aria-label="Project labels explained" aria-expanded="false" aria-haspopup="true">
+              <svg class="projects-info-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            </button>
+            <div class="projects-info-popover" id="projects-info-popover" role="tooltip" aria-hidden="true">
+              <p class="projects-info-popover-title">Project labels</p>
+              <ul class="projects-info-popover-list">
+                <li><span class="project-card-label project-card-demo">Demo</span> — Live demo available</li>
+                <li><span class="project-card-label project-card-report">Report</span> — Report or write-up available</li>
+                <li><span class="project-card-label project-card-in-progress">In Progress</span> — Work in progress</li>
+                <li><span class="project-card-label project-card-shipped">Shipped</span> — Shipped / released</li>
+                <li><span class="project-card-label project-card-research">Research</span> — Research project</li>
+                <li><img src="../assets/icons/team.png" alt="" class="projects-info-sfu-logo" width="16" height="16"> — Team project</li>
+                <li><img src="../assets/icons/companies/sfu-square.png" alt="" width="16" height="16" class="projects-info-sfu-logo"> — SFU coursework or related to SFU</li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <nav class="projects-nav" aria-label="Jump to category">
           <a href="#fullstack">Full-Stack Projects</a>
           <a href="#ml">Data &amp; Machine Learning</a>
@@ -40,7 +59,7 @@
                 <span class="project-card-label project-card-demo">Demo</span>
                 <span class="project-card-label project-card-report">Report</span>
               </div>
-              <span class="project-card-icon" aria-hidden="true">👥</span>
+              <img src="../assets/icons/team.png" alt="" class="project-card-logo" width="24" height="24" aria-hidden="true">
             </div>
             <h3>GymWhisper</h3>
             <p>Voice-powered workout tracking. Hands-free logging via speech → AI converts to structured workout data.</p>
@@ -56,7 +75,7 @@
                 <span class="project-card-label project-card-demo">Demo</span>
                 <span class="project-card-label project-card-report">Report</span>
               </div>
-              <span class="project-card-icon" aria-hidden="true">👥</span>
+              <img src="../assets/icons/team.png" alt="" class="project-card-logo" width="24" height="24" aria-hidden="true">
             </div>
             <h3>TelusGuardAI — Network Impact Analyzer</h3>
             <p>Multi-agent AI system for network outage analysis. NL queries → geospatial impact assessments with map viz.</p>
@@ -126,7 +145,7 @@
               <div class="project-card-labels">
                 <span class="project-card-label project-card-demo">Demo</span>
               </div>
-              <img src="../assets/icons/companies/sfu-square.png" alt="SFU" class="project-card-logo" width="24" height="24">
+              <img src="../assets/icons/companies/sfu-square.png" alt="SFU" class="project-card-logo project-card-logo-sfu" width="24" height="24">
             </div>
             <h3>Smaller Project (Placeholder)</h3>
             <p>Placeholder: Smaller or side project description.</p>
@@ -140,7 +159,7 @@
               <div class="project-card-labels">
                 <span class="project-card-label project-card-research">Research</span>
               </div>
-              <img src="../assets/icons/companies/sfu-square.png" alt="SFU" class="project-card-logo" width="24" height="24">
+              <img src="../assets/icons/companies/sfu-square.png" alt="SFU" class="project-card-logo project-card-logo-sfu" width="24" height="24">
             </div>
             <h3>Coursework / Side Project (Placeholder)</h3>
             <p>Placeholder: Additional coursework or side project description.</p>
@@ -152,5 +171,46 @@
       </div>
     </section>
   </main>
+  <script>
+    (function () {
+      var wrap = document.getElementById('projects-info-wrap');
+      var trigger = document.getElementById('projects-info-trigger');
+      var popover = document.getElementById('projects-info-popover');
+      if (!wrap || !trigger || !popover) return;
+
+      function open() {
+        wrap.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        popover.setAttribute('aria-hidden', 'false');
+      }
+
+      function close() {
+        wrap.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+        popover.setAttribute('aria-hidden', 'true');
+      }
+
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (wrap.classList.contains('is-open')) {
+          close();
+        } else {
+          open();
+        }
+      });
+
+      document.addEventListener('click', function (e) {
+        if (wrap.classList.contains('is-open') && !wrap.contains(e.target)) {
+          close();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && wrap.classList.contains('is-open')) {
+          close();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
