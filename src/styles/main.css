@@ -6,6 +6,18 @@
   box-sizing: border-box;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 html {
   background-color: #0a090d;
 }
@@ -2049,9 +2061,18 @@ body.page-projects .projects-intro::before {
   }
 }
 
+/* Text scramble reveal: slot-machine style character reveal */
+.text-scramble-reveal-inner {
+  display: inline;
+}
+
+.text-scramble-char {
+  display: inline;
+}
+
 /* Projects listing: main heading — centered, larger, green gradient wave (projects page only) */
 body.page-projects .projects-intro h1 {
-  font-size: clamp(2.25rem, 10vw, 4rem);
+  font-size: clamp(2.5rem, 12vw, 4.5rem);
   font-weight: 600;
   margin: 0 0 1.5rem;
   text-align: center;
