@@ -35,21 +35,23 @@ body.page-projects {
   --accent-link-hover: #67e8f9;
 }
 
-/* Projects listing page: teal/green tinted background */
+/* Projects listing page: smooth teal/green tinted gradient, no texture */
 body.page-projects-listing {
-  background-color: #0a0d0d;
-  background-image: linear-gradient(165deg, #0b0f0f 0%, #0d1212 35%, #0a0d0d 70%, #0a1212 100%);
+  background-color: #080c0c;
+  background-image: linear-gradient(
+    165deg,
+    #0a0d0d 0%,
+    #0b0f0f 12%,
+    #0c1010 25%,
+    #0d1212 38%,
+    #0e1313 50%,
+    #0c1111 62%,
+    #0b0e0e 75%,
+    #0a0d0d 88%,
+    #080c0c 100%
+  );
   background-attachment: fixed;
-}
-
-body.page-projects-listing::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.035;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
 }
 
 body.page-projects-listing main {
@@ -57,21 +59,23 @@ body.page-projects-listing main {
   z-index: 1;
 }
 
-/* Project detail pages: dark blue background */
+/* Project detail pages: smooth dark blue gradient, no texture */
 body.page-projects:not(.page-projects-listing) {
-  background-color: #0a0d12;
-  background-image: linear-gradient(165deg, #0b0e14 0%, #0d1018 35%, #0a0d12 70%, #0a0f16 100%);
+  background-color: #080a0f;
+  background-image: linear-gradient(
+    165deg,
+    #0a0d12 0%,
+    #0b0e14 12%,
+    #0c0f16 25%,
+    #0d1018 38%,
+    #0e111a 50%,
+    #0c0f16 62%,
+    #0b0e12 75%,
+    #0a0d12 88%,
+    #080a0f 100%
+  );
   background-attachment: fixed;
-}
-
-body.page-projects:not(.page-projects-listing)::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.035;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
 }
 
 body.page-projects:not(.page-projects-listing) main {
@@ -79,21 +83,23 @@ body.page-projects:not(.page-projects-listing) main {
   z-index: 1;
 }
 
-/* Home page: gradient + noise across entire page */
+/* Home page: smooth dark gradient, no texture (avoids banding) */
 body.page-home {
-  background-color: #0a090d;
-  background-image: linear-gradient(165deg, #0c0b0f 0%, #0f0d14 35%, #0a090d 70%, #0d0a12 100%);
+  background-color: #08070a;
+  background-image: linear-gradient(
+    165deg,
+    #0a090d 0%,
+    #0c0b0f 12%,
+    #0d0c11 25%,
+    #0e0d13 38%,
+    #0f0d14 50%,
+    #0d0c10 62%,
+    #0b0a0e 75%,
+    #0a090d 88%,
+    #08070a 100%
+  );
   background-attachment: fixed;
-}
-
-body.page-home::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.035;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
 }
 
 body.page-home main {
@@ -306,6 +312,21 @@ main {
   justify-content: center;
   padding: 2rem 1.5rem;
   overflow: hidden;
+}
+
+/* Home page: very soft purple glow behind hero text, blends into background */
+body.page-home .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 100% 80% at 50% 45%,
+    rgba(168, 85, 247, 0.07) 0%,
+    rgba(168, 85, 247, 0.03) 35%,
+    transparent 65%
+  );
 }
 
 .hero-content {
