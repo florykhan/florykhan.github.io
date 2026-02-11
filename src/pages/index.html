@@ -6,7 +6,7 @@
   <title>Ilian Khankhalaev</title>
   <link rel="stylesheet" href="../styles/main.css">
 </head>
-<body>
+<body class="page-home">
   <!-- Sticky Nav -->
   <nav class="nav-sticky">
     <div class="nav-inner">
@@ -19,12 +19,18 @@
   </nav>
 
   <main>
-    <!-- Hero / Intro -->
-    <section id="hero" class="section hero">
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <h1 class="hero-name">Ilian Khankhalaev</h1>
-          <p class="hero-role">CS Student · Software &amp; ML</p>
+    <!-- Hero: full viewport, name + subtitle + scroll cue only -->
+    <section id="hero" class="hero" aria-label="Welcome">
+      <div class="hero-content">
+        <h1 class="hero-name">Ilian Khankhalaev</h1>
+        <p class="hero-subtitle">CS Student · Software &amp; ML</p>
+      </div>
+    </section>
+
+    <!-- Intro: tagline, CTA, photo (below the fold) -->
+    <section id="intro" class="section reveal">
+      <div class="container intro-inner">
+        <div class="intro-content">
           <p class="hero-tagline">Building software and machine learning projects. Interested in applied ML, data engineering, and clean systems.</p>
           <div class="hero-cta">
             <a href="#">Resume (PDF)</a>
