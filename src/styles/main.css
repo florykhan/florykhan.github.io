@@ -20,6 +20,13 @@
 
 html {
   background-color: #0a090d;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
