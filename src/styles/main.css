@@ -299,7 +299,7 @@ main {
    ======================================== */
 
 .section {
-  padding: 4rem 0;
+  padding: 1.75rem 0;
 }
 
 .section-title {
@@ -2657,7 +2657,7 @@ main h1 {
   }
 
   .section {
-    padding: 2.5rem 0;
+    padding: 1.25rem 0;
   }
 
   .nav-inner {
