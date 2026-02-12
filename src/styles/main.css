@@ -516,7 +516,7 @@ body.page-home .hero::before {
   gap: 1rem;
 }
 
-.hero-cta a {
+.hero-cta a:not(.contact-icon-link) {
   color: var(--accent-link);
   text-decoration: none;
   font-size: 0.95rem;
@@ -524,8 +524,13 @@ body.page-home .hero::before {
   transition: color 0.15s ease;
 }
 
-.hero-cta a:hover {
+.hero-cta a:not(.contact-icon-link):hover {
   color: var(--accent-link-hover);
+}
+
+/* Intro CTA uses same icon+label chips as Contact section */
+.hero-cta.contact-header-icons {
+  gap: 0.75rem;
 }
 
 /* ========================================
@@ -1904,6 +1909,92 @@ ul.exp-desc li:last-child {
    Contact
    ======================================== */
 
+/* Contact section: heading and social icons on one row */
+.contact-header-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-header-row .section-title {
+  margin-bottom: 0;
+}
+
+.contact-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.contact-icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.04);
+  opacity: 0.85;
+  text-decoration: none;
+  color: #b0b0b0;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.contact-icon-link:hover,
+.contact-icon-link:focus-visible {
+  opacity: 1;
+  transform: scale(1.06);
+  border-color: rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #e0e0e0;
+}
+
+.contact-icon-link:focus {
+  outline: none;
+}
+
+.contact-icon-link:focus-visible {
+  outline: 2px solid rgba(122, 184, 232, 0.6);
+  outline-offset: 2px;
+}
+
+.contact-icon-link img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.contact-icon-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Contact section: icons only, no label text or pill background */
+.contact-icon-link--icon-only {
+  padding: 0.25rem;
+  border: none;
+  border-radius: 0;
+  background: none;
+}
+
+.contact-icon-link--icon-only:hover,
+.contact-icon-link--icon-only:focus-visible {
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.contact-icon-link--icon-only .contact-icon-label {
+  display: none;
+}
+
 .contact-intro {
   color: #b0b0b0;
   font-size: 1rem;
@@ -2007,23 +2098,6 @@ body.page-home .contact-form textarea:focus {
   font-size: 0.85rem;
   color: #666;
   margin: 0 0 1.5rem;
-}
-
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.contact-links a {
-  color: var(--accent-link);
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.15s ease;
-}
-
-.contact-links a:hover {
-  color: var(--accent-link-hover);
 }
 
 @media (min-width: 900px) {
