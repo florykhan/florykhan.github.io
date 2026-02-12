@@ -662,7 +662,7 @@ body.page-home .hero::before {
 
 /* First card: small "Start" flag (sits above card like a tab) */
 .timeline-item:first-child .timeline-node::before {
-  content: "Start";
+  content: "Origin";
   position: absolute;
   top: -0.6rem;
   left: 0.5rem;
@@ -682,7 +682,7 @@ body.page-home .hero::before {
 
 /* Last card: small "Latest" badge (sits above card like a tab) */
 .timeline-item:last-child .timeline-node::before {
-  content: "Latest";
+  content: "Now";
   position: absolute;
   top: -0.6rem;
   right: 0.5rem;
@@ -746,8 +746,19 @@ body.page-home .hero::before {
   line-height: 1.4;
 }
 
+/* Line between narrative cards: visible connector with stepped path */
 .timeline-connector {
-  display: none;
+  flex-shrink: 0;
+  width: 3rem;
+  margin-top: 0.5rem;
+  color: #404040;
+  align-self: center;
+}
+
+.timeline-connector-line {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Mobile: marquee stays horizontal (swipe/scroll when reduced motion) */
