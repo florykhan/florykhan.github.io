@@ -104,18 +104,16 @@ body.page-projects:not(.page-projects-listing) main {
 
 /* Home page: smooth dark gradient, no texture (avoids banding) */
 body.page-home {
-  background-color: #08070a;
+  background-color: #060508;
   background-image: linear-gradient(
     165deg,
-    #0a090d 0%,
-    #0c0b0f 12%,
-    #0d0c11 25%,
-    #0e0d13 38%,
-    #0f0d14 50%,
-    #0d0c10 62%,
-    #0b0a0e 75%,
-    #0a090d 88%,
-    #08070a 100%
+    #060508 0%,
+    #0a080e 15%,
+    #0e0c14 30%,
+    #120f1a 50%,
+    #0e0c14 70%,
+    #0a080e 85%,
+    #060508 100%
   );
   background-attachment: fixed;
   background-size: 100% 100%;
