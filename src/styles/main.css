@@ -352,6 +352,7 @@ body.page-home .hero::before {
   width: 100%;
   max-width: 720px;
   padding: 0 1.5rem;
+  margin-top: -1.25rem;
 }
 
 .hero-name {
@@ -521,11 +522,21 @@ body.page-home .hero::before {
    Narrative Timeline / My Path
    ======================================== */
 
-/* Marquee viewport: masks the track, enables pause on hover */
+/* Marquee viewport: scrollable, scrollbar hidden, start with first card centered */
 .timeline-marquee {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: visible;
   padding: 1.5rem 1.5rem 2rem;
-  touch-action: pan-y pinch-zoom;
+  padding-left: max(1.5rem, calc(50% - 150px));
+  touch-action: pan-x pan-y pinch-zoom;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-anchor: none;
+}
+
+.timeline-marquee::-webkit-scrollbar {
+  display: none;
 }
 
 /* When reduced motion: static, single set, user can scroll horizontally */
@@ -545,9 +556,8 @@ body.page-home .hero::before {
   }
 }
 
-/* Pause animation only when hovering a card or when a card has focus */
-.timeline-track:has(.timeline-node:hover),
-.timeline-track:has(.timeline-node:focus) {
+/* Pause animation on hover/focus - handled via JS (timeline-track-paused) to avoid scroll jump */
+.timeline-track-paused {
   animation-play-state: paused;
 }
 
@@ -557,7 +567,7 @@ body.page-home .hero::before {
   flex-wrap: nowrap;
   width: max-content;
   will-change: transform;
-  animation: timeline-marquee 45s linear infinite;
+  animation: timeline-marquee 550s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -575,7 +585,21 @@ body.page-home .hero::before {
   }
 }
 
-/* Each set (original + duplicate) takes equal space; -50% = one full set width */
+/* Extended track (12 sets): animate 50% = 6 sets for seamless loop */
+.timeline-track-extended {
+  animation: timeline-marquee-extended 540s linear infinite;
+}
+
+@keyframes timeline-marquee-extended {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Each set (original + duplicate) takes equal space */
 .timeline-set {
   display: flex;
   flex-direction: row;
@@ -616,14 +640,15 @@ body.page-home .hero::before {
 }
 
 .timeline-item:last-child {
-  margin-right: 3rem;
+  margin-right: 9rem;
 }
 
 .timeline-node {
-  flex: 0 0 200px;
-  min-width: 180px;
+  flex: 0 0 280px;
+  min-width: 260px;
   display: block;
   position: relative;
+  z-index: 1;
   text-decoration: none;
   color: inherit;
   background-color: #1a1a1a;
@@ -722,24 +747,6 @@ body.page-home .hero::before {
 }
 
 .timeline-connector {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.35rem;
-  padding: 0 0.25rem;
-  min-width: 0;
-}
-
-.timeline-arrow {
-  color: #454545;
-  font-size: 0.95rem;
-  font-weight: 300;
-  opacity: 0.85;
-}
-
-.timeline-arrow-v {
   display: none;
 }
 
@@ -757,12 +764,9 @@ body.page-home .hero::before {
   }
 
   .timeline-marquee .timeline-node {
-    min-width: 180px;
+    min-width: 240px;
   }
 
-  .timeline-marquee .timeline-connector {
-    padding: 0 0.5rem;
-  }
 }
 
 /* ========================================
@@ -2074,7 +2078,7 @@ body.page-projects .projects-intro::before {
 body.page-projects .projects-intro h1 {
   font-size: clamp(2.5rem, 12vw, 4.5rem);
   font-weight: 600;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
   text-align: center;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -2114,20 +2118,31 @@ main h1 {
   color: #fff;
 }
 
+.projects-intro-card {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem;
+  background: rgba(20, 25, 28, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
 .projects-intro-row {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 0.75rem;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
 }
 
 .projects-intro-text {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #a0a0a0;
-  line-height: 1.6;
+  line-height: 1.55;
   margin: 0;
-  max-width: 48ch;
+  max-width: 42ch;
 }
 
 .projects-info-wrap {
@@ -2255,20 +2270,34 @@ main h1 {
 .projects-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  margin-bottom: 0.5rem;
+  gap: 0.35rem;
+  margin: 0;
 }
 
 .projects-nav a {
-  font-size: 0.9rem;
-  color: var(--accent-link);
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  color: #888;
   text-decoration: none;
-  transition: color 0.15s ease;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.projects-nav a:hover,
-.projects-nav a:focus-visible {
-  color: var(--accent-link-hover);
+.projects-nav a:hover {
+  color: #b0b0b0;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.projects-nav a.is-active {
+  color: var(--accent-light, #ccfbf1);
+  background: rgba(20, 184, 166, 0.15);
+  border-color: rgba(20, 184, 166, 0.35);
+  box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.2);
 }
 
 .projects-nav a:focus {
@@ -2276,9 +2305,8 @@ main h1 {
 }
 
 .projects-nav a:focus-visible {
-  outline: 2px solid rgba(122, 184, 232, 0.6);
+  outline: 2px solid rgba(20, 184, 166, 0.5);
   outline-offset: 2px;
-  border-radius: 2px;
 }
 
 .project-category {
@@ -2672,7 +2700,7 @@ main h1 {
    ======================================== */
 
 .type-on-scroll {
-  /* min-width set by JS so layout doesn't jump during typing */
+  min-width: 0; /* overridden by JS for layout stability during typing */
 }
 
 .type-on-scroll-text,

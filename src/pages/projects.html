@@ -21,9 +21,10 @@
     <section class="section projects-intro">
       <div class="container">
         <h1 class="text-scramble-reveal">Projects</h1>
-        <div class="projects-intro-row">
-          <p class="projects-intro-text">Projects are grouped by type below. Click any card to open its detail page for overview, tech stack, results, and learnings.</p>
-          <div class="projects-info-wrap" id="projects-info-wrap">
+        <div class="projects-intro-card">
+          <div class="projects-intro-row">
+            <p class="projects-intro-text">A curated selection of projects across full-stack software, data &amp; machine learning, and systems.</p>
+            <div class="projects-info-wrap" id="projects-info-wrap">
             <button type="button" class="projects-info-trigger" id="projects-info-trigger" aria-label="Project labels explained" aria-expanded="false" aria-haspopup="true">
               <svg class="projects-info-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
             </button>
@@ -40,12 +41,13 @@
               </ul>
             </div>
           </div>
+          </div>
+          <nav class="projects-nav" role="tablist" aria-label="Jump to category">
+            <a href="#fullstack" role="tab" aria-selected="false" data-section="fullstack">Full-Stack Projects</a>
+            <a href="#ml" role="tab" aria-selected="false" data-section="ml">Data &amp; Machine Learning</a>
+            <a href="#coursework" role="tab" aria-selected="false" data-section="coursework">Systems / Coursework / Side Projects</a>
+          </nav>
         </div>
-        <nav class="projects-nav" aria-label="Jump to category">
-          <a href="#fullstack">Full-Stack Projects</a>
-          <a href="#ml">Data &amp; Machine Learning</a>
-          <a href="#coursework">Systems / Coursework / Side Projects</a>
-        </nav>
       </div>
     </section>
 
@@ -178,6 +180,44 @@
   </main>
   <script src="../scripts/text-scramble-reveal.js"></script>
   <script>
+    (function () {
+      var nav = document.querySelector('.projects-nav');
+      var tabs = nav ? nav.querySelectorAll('a[data-section]') : [];
+      var sections = ['fullstack', 'ml', 'coursework'].map(function (id) {
+        return document.getElementById(id);
+      }).filter(Boolean);
+
+      function setActive(sectionId) {
+        tabs.forEach(function (tab) {
+          var isActive = tab.getAttribute('data-section') === sectionId;
+          tab.classList.toggle('is-active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      }
+
+      function updateFromHash() {
+        var hash = (location.hash || '#fullstack').slice(1);
+        if (sections.some(function (s) { return s.id === hash; })) {
+          setActive(hash);
+        }
+      }
+
+      if (nav && tabs.length && sections.length) {
+        updateFromHash();
+        window.addEventListener('hashchange', updateFromHash);
+
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              setActive(entry.target.id);
+            });
+          },
+          { rootMargin: '-20% 0px -60% 0px', threshold: 0 }
+        );
+        sections.forEach(function (s) { observer.observe(s); });
+      }
+    })();
     (function () {
       var wrap = document.getElementById('projects-info-wrap');
       var trigger = document.getElementById('projects-info-trigger');
