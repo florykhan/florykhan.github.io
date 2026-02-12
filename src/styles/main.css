@@ -2164,6 +2164,7 @@ body.page-home .contact-form textarea:focus {
 /* Projects page intro section with subtle teal glow */
 body.page-projects .projects-intro {
   position: relative;
+  z-index: 2;
 }
 
 body.page-projects .projects-intro::before {
@@ -2250,14 +2251,16 @@ main h1 {
 }
 
 .projects-intro-card {
-  max-width: 540px;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
   margin: 0 auto;
   padding: 1.5rem 1.75rem;
-  background: rgba(20, 25, 28, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .projects-intro-row {
@@ -2273,12 +2276,13 @@ main h1 {
   color: #a0a0a0;
   line-height: 1.55;
   margin: 0;
-  max-width: 42ch;
+  width: 100%;
 }
 
 .projects-info-wrap {
   position: relative;
   flex-shrink: 0;
+  z-index: 1;
 }
 
 .projects-info-trigger {
@@ -2319,14 +2323,14 @@ main h1 {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
-  z-index: 50;
-  min-width: 240px;
-  max-width: 320px;
+  z-index: 100;
+  min-width: 320px;
+  max-width: 420px;
   padding: 0.75rem 1rem;
-  background-color: rgba(26, 26, 26, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(18, 18, 22, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   opacity: 0;
@@ -2367,6 +2371,16 @@ main h1 {
 
 .projects-info-popover-list li:last-child {
   margin-bottom: 0;
+}
+
+/* Last two rows (icon labels): align left with the rows above */
+.projects-info-popover-list li:nth-last-child(1),
+.projects-info-popover-list li:nth-last-child(2) {
+  margin-left: -0.75em;
+}
+.projects-info-popover-list li:nth-last-child(1) > :first-child,
+.projects-info-popover-list li:nth-last-child(2) > :first-child {
+  justify-content: flex-start;
 }
 
 /* Fixed-width label column so all descriptions align (same width for pills and icons) */
@@ -2418,17 +2432,25 @@ main h1 {
   transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.projects-nav a:hover {
-  color: #b0b0b0;
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+.projects-nav a:hover,
+.projects-nav a:focus-visible {
+  color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .projects-nav a.is-active {
-  color: var(--accent-light, #ccfbf1);
-  background: rgba(20, 184, 166, 0.15);
-  border-color: rgba(20, 184, 166, 0.35);
-  box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.2);
+  /* No highlight: active tab looks same as others */
+  color: #888;
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.projects-nav a.is-active:hover,
+.projects-nav a.is-active:focus-visible {
+  color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .projects-nav a:focus {
@@ -2436,7 +2458,7 @@ main h1 {
 }
 
 .projects-nav a:focus-visible {
-  outline: 2px solid rgba(20, 184, 166, 0.5);
+  outline: 2px solid rgba(255, 255, 255, 0.35);
   outline-offset: 2px;
 }
 
