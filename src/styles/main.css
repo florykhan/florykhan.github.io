@@ -317,7 +317,7 @@ main {
 
 /* Contact section: scroll-to offset so nav "Contact" lands a bit higher (matches scroll-arrow offset) */
 #contact {
-  scroll-margin-top: 35px;
+  scroll-margin-top: 45px;
 }
 
 /* ========================================
@@ -1472,10 +1472,13 @@ body[data-narrative] .narrative-btn-disabled {
 
 .tech-tags span {
   font-size: 0.75rem;
-  color: #888;
-  background-color: #252525;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+  color: #b0b0b0;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
 }
 
 .card-links {
@@ -1646,16 +1649,40 @@ body[data-narrative] .narrative-btn-disabled {
 
 .skills-grid {
   display: grid;
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 720px;
+}
+
+@media (min-width: 640px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.skill-group {
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-group:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .skill-group h4 {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #888;
-  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 .chips {
@@ -1665,12 +1692,14 @@ body[data-narrative] .narrative-btn-disabled {
 }
 
 .chips span {
-  font-size: 0.85rem;
-  color: #c0c0c0;
-  background-color: #1e1e1e;
-  border: 1px solid #2a2a2a;
-  padding: 0.35rem 0.65rem;
-  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #b0b0b0;
+  background-color: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
 }
 
 /* ========================================
