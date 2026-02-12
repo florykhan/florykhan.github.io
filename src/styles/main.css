@@ -258,13 +258,15 @@ main {
   padding-top: 3.5rem;
 }
 
+/* Centered navbar container: equal horizontal padding, logo and links aligned within same band */
 .nav-inner {
-  max-width: 720px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .nav-logo {
@@ -272,6 +274,8 @@ main {
   color: #fff;
   text-decoration: none;
   font-size: 0.95rem;
+  /* Move only the name: positive = right, negative = left */
+  margin-left: 3.5rem;
 }
 
 .nav-sticky ul {
@@ -279,7 +283,7 @@ main {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .nav-sticky a {
@@ -308,6 +312,11 @@ main {
   margin: 0 0 1.5rem;
   color: #fff;
   letter-spacing: -0.02em;
+}
+
+/* Contact section: scroll-to offset so nav "Contact" lands a bit higher (matches scroll-arrow offset) */
+#contact {
+  scroll-margin-top: 35px;
 }
 
 /* ========================================
@@ -2661,7 +2670,7 @@ main h1 {
   }
 
   .nav-inner {
-    padding: 0.875rem 1rem;
+    padding: 0.875rem 1.25rem;
   }
 
   .nav-logo {

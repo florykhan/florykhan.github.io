@@ -12,9 +12,11 @@
     }
 
     function scrollToTarget() {
-      target.scrollIntoView({
-        behavior: reducedMotion ? 'auto' : 'smooth',
-        block: 'start'
+      var y = target.getBoundingClientRect().top + window.scrollY;
+      var offset = 80; /* stop a bit higher so first section sits higher on screen */
+      window.scrollTo({
+        top: Math.max(0, y - offset),
+        behavior: reducedMotion ? 'auto' : 'smooth'
       });
     }
 
