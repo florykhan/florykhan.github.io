@@ -261,12 +261,13 @@ main {
 /* Centered navbar container: equal horizontal padding, logo and links aligned within same band */
 .nav-inner {
   max-width: 960px;
-  margin: 0 auto;
+  margin: 0 auto 0 7.6rem;
   padding: 1rem 1.85rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  /* Shift whole navbar right: increase the left margin value (e.g. 2.5rem) */
 }
 
 .nav-logo {
