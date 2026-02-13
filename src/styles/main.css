@@ -542,6 +542,31 @@ body.page-home .hero::before {
    Narrative Timeline / My Path
    ======================================== */
 
+/* Wrapper for edge fades (hint that more content is scrollable) */
+.timeline-marquee-wrap {
+  position: relative;
+}
+
+.timeline-marquee-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(6, 5, 8, 0.92));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Minimal hint that timeline is scrollable and cards are clickable */
+.timeline-hint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin: -0.5rem 0 1rem;
+  letter-spacing: 0.02em;
+}
+
 /* Marquee viewport: scrollable, scrollbar hidden, start with first card centered */
 .timeline-marquee {
   overflow-x: auto;
@@ -2369,6 +2394,15 @@ main h1 {
 
 .projects-info-popover-list li:last-child {
   margin-bottom: 0;
+}
+
+.projects-info-popover-note {
+  font-size: 0.8rem;
+  color: #a0a0a0;
+  margin: 0.75rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  line-height: 1.4;
 }
 
 /* Last two rows (icon labels): align left with the rows above */
