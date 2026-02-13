@@ -2650,6 +2650,54 @@ main h1 {
   color: var(--accent-link-hover);
 }
 
+/* Projects page: teal/green gradient on back link and meta links (match projects theme) */
+body.page-projects .project-back {
+  background: linear-gradient(90deg, #0d9488 0%, #14b8a6 25%, #5eead4 50%, #14b8a6 75%, #0d9488 100%);
+  background-size: 200% 100%;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.2s ease;
+}
+
+body.page-projects .project-back:hover,
+body.page-projects .project-back:focus-visible {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.page-projects .project-back {
+    animation: projects-link-gradient 2.5s ease-in-out infinite;
+  }
+}
+
+@keyframes projects-link-gradient {
+  0%, 100% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+}
+
+body.page-projects .project-detail .project-meta-links a {
+  background: linear-gradient(90deg, #0d9488 0%, #14b8a6 25%, #5eead4 50%, #14b8a6 75%, #0d9488 100%);
+  background-size: 200% 100%;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.2s ease;
+}
+
+body.page-projects .project-detail .project-meta-links a:hover,
+body.page-projects .project-detail .project-meta-links a:focus-visible {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.page-projects .project-detail .project-meta-links a {
+    animation: projects-link-gradient 2.5s ease-in-out infinite;
+  }
+}
+
 .project-detail .project-header {
   margin-bottom: 2rem;
 }
