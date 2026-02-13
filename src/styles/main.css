@@ -1816,6 +1816,12 @@ body.page-home .see-all a:focus-visible {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
+/* Home page: skills cards hover – same as narrative/timeline cards */
+body.page-home .skill-group:hover {
+  background-color: rgba(48, 38, 62, 0.55);
+  border-color: rgba(168, 85, 247, 0.15);
+}
+
 .skill-group h4 {
   font-size: 0.75rem;
   font-weight: 600;
@@ -2123,6 +2129,14 @@ ul.exp-desc li:last-child {
   color: #e0e0e0;
 }
 
+/* Home intro: CTA chips hover – same as skills cards / narrative cards */
+body.page-home .contact-icon-link:hover,
+body.page-home .contact-icon-link:focus-visible {
+  color: rgba(233, 213, 255, 0.95);
+  border-color: rgba(168, 85, 247, 0.15);
+  background-color: rgba(48, 38, 62, 0.55);
+}
+
 .contact-icon-link:focus {
   outline: none;
 }
@@ -2158,6 +2172,16 @@ ul.exp-desc li:last-child {
 .contact-icon-link--icon-only:focus-visible {
   border-color: transparent;
   background-color: transparent;
+}
+
+/* Contact section header (email, LinkedIn, GitHub): no background or border on hover/focus */
+#contact .contact-icon-link--icon-only,
+#contact .contact-icon-link--icon-only:hover,
+#contact .contact-icon-link--icon-only:focus-visible {
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-color: transparent !important;
 }
 
 .contact-icon-link--icon-only .contact-icon-label {
@@ -2249,16 +2273,16 @@ body.page-home .contact-form textarea:focus {
   color: #0f0f0f;
 }
 
-/* Home page: Send button matches glassy purple style */
+/* Home page: Send button – solid purple */
 body.page-home .contact-submit {
-  background-color: rgba(168, 85, 247, 0.25);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  color: #e8d5f5;
+  background-color: #5b21b6;
+  border: 1px solid rgba(88, 28, 135, 0.8);
+  color: #e9d5ff;
 }
 
 body.page-home .contact-submit:hover {
-  background-color: rgba(168, 85, 247, 0.4);
-  border-color: rgba(168, 85, 247, 0.55);
+  background-color: #6d28d9;
+  border-color: rgba(124, 58, 237, 0.9);
   color: #f5e6ff;
 }
 
