@@ -2508,6 +2508,22 @@ main h1 {
   outline-offset: 2px;
 }
 
+/* Projects page: info icon – same lowkey greenish hover as category tabs, no background square, slightly bigger on hover */
+body.page-projects .projects-info-trigger {
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+body.page-projects .projects-info-trigger:hover,
+body.page-projects .projects-info-trigger:focus-visible {
+  color: #666;
+  background-color: transparent;
+  transform: scale(1.12);
+}
+
+body.page-projects .projects-info-trigger:focus-visible {
+  outline-color: rgba(20, 184, 166, 0.35);
+}
+
 .projects-info-icon {
   display: block;
 }
@@ -2631,7 +2647,7 @@ main h1 {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.02);
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .projects-nav a:hover,
@@ -2639,6 +2655,15 @@ main h1 {
   color: #e0e0e0;
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Projects page: category tabs greenish hover – lowkey + subtle scale */
+body.page-projects .projects-nav a:hover,
+body.page-projects .projects-nav a:focus-visible {
+  color: #a7c4c0;
+  background: rgba(13, 148, 136, 0.08);
+  border-color: rgba(20, 184, 166, 0.15);
+  transform: scale(1.02);
 }
 
 .projects-nav a.is-active {
@@ -2653,6 +2678,14 @@ main h1 {
   color: #e0e0e0;
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.18);
+}
+
+body.page-projects .projects-nav a.is-active:hover,
+body.page-projects .projects-nav a.is-active:focus-visible {
+  color: #a7c4c0;
+  background: rgba(13, 148, 136, 0.08);
+  border-color: rgba(20, 184, 166, 0.15);
+  transform: scale(1.02);
 }
 
 .projects-nav a:focus {
