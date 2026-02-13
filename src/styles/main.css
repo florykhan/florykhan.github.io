@@ -1542,6 +1542,34 @@ body[data-narrative] .narrative-btn-disabled {
   color: var(--accent-link-hover);
 }
 
+/* Home page: "See all" and action links — lighter purple so they don’t look visited */
+body.page-home .see-all a {
+  display: inline-block;
+  background: linear-gradient(90deg, #a78bfa 0%, #c4b5fd 25%, #e9d5ff 50%, #c4b5fd 75%, #a78bfa 100%);
+  background-size: 200% 100%;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.2s ease;
+}
+
+body.page-home .see-all a:hover,
+body.page-home .see-all a:focus-visible {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.page-home .see-all a {
+    animation: home-link-gradient 2.5s ease-in-out infinite;
+  }
+}
+
+@keyframes home-link-gradient {
+  0%, 100% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+}
+
 /* ========================================
    Posts
    ======================================== */
@@ -2110,8 +2138,9 @@ body.page-home .contact-form textarea {
 
 body.page-home .contact-form input:focus,
 body.page-home .contact-form textarea:focus {
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(168, 85, 247, 0.5);
   background-color: rgba(36, 32, 44, 0.5);
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
 }
 
 .contact-form textarea {
@@ -2136,6 +2165,41 @@ body.page-home .contact-form textarea:focus {
 .contact-submit:hover {
   background-color: var(--accent-link-hover);
   color: #0f0f0f;
+}
+
+/* Home page: Send button matches glassy purple style */
+body.page-home .contact-submit {
+  background-color: rgba(168, 85, 247, 0.25);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #e8d5f5;
+}
+
+body.page-home .contact-submit:hover {
+  background-color: rgba(168, 85, 247, 0.4);
+  border-color: rgba(168, 85, 247, 0.55);
+  color: #f5e6ff;
+}
+
+body.page-home .contact-form-status a {
+  display: inline-block;
+  background: linear-gradient(90deg, #a78bfa 0%, #c4b5fd 25%, #e9d5ff 50%, #c4b5fd 75%, #a78bfa 100%);
+  background-size: 200% 100%;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.2s ease;
+}
+
+body.page-home .contact-form-status a:hover,
+body.page-home .contact-form-status a:focus-visible {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.page-home .contact-form-status a {
+    animation: home-link-gradient 2.5s ease-in-out infinite;
+  }
 }
 
 .contact-form-status {
