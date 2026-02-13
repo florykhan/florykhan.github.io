@@ -705,42 +705,42 @@ body.page-home .hero::before {
   cursor: pointer;
 }
 
-/* First card: small "Start" flag (sits above card like a tab) */
+/* First card: "Origin" label (small, low-key) */
 .timeline-item:first-child .timeline-node::before {
   content: "Origin";
   position: absolute;
-  top: -0.6rem;
+  top: -0.5rem;
   left: 0.5rem;
-  font-size: 0.55rem;
-  font-weight: 600;
+  font-size: 0.5rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--accent-primary, #a855f7);
-  background: rgba(168, 85, 247, 0.2);
-  padding: 0.15rem 0.4rem;
+  letter-spacing: 0.06em;
+  color: rgba(200, 180, 220, 0.7);
+  background: rgba(60, 40, 80, 0.25);
+  padding: 0.12rem 0.35rem;
   border-radius: 2px 2px 0 0;
-  border: 1px solid rgba(168, 85, 247, 0.35);
+  border: 1px solid rgba(168, 85, 247, 0.15);
   border-bottom: none;
   pointer-events: none;
   z-index: 1;
 }
 
-/* Last card: small "Latest" badge (sits above card like a tab) */
+/* Last card: "Now" label (small, low-key) */
 .timeline-item:last-child .timeline-node::before {
   content: "Now";
   position: absolute;
-  top: -0.6rem;
+  top: -0.5rem;
   right: 0.5rem;
   left: auto;
-  font-size: 0.55rem;
-  font-weight: 600;
+  font-size: 0.5rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--accent-primary, #a855f7);
-  background: rgba(168, 85, 247, 0.2);
-  padding: 0.15rem 0.4rem;
+  letter-spacing: 0.06em;
+  color: rgba(200, 180, 220, 0.7);
+  background: rgba(60, 40, 80, 0.25);
+  padding: 0.12rem 0.35rem;
   border-radius: 2px 2px 0 0;
-  border: 1px solid rgba(168, 85, 247, 0.35);
+  border: 1px solid rgba(168, 85, 247, 0.15);
   border-bottom: none;
   pointer-events: none;
   z-index: 1;
@@ -829,6 +829,40 @@ body.page-home .hero::before {
    Narrative detail pages
    ======================================== */
 
+/* Narrative pages: same dark purple vibe as main page */
+body[data-narrative] {
+  background-color: #060508;
+  background-image: linear-gradient(
+    165deg,
+    #060508 0%,
+    #0a080e 15%,
+    #0e0c14 30%,
+    #120f1a 50%,
+    #0e0c14 70%,
+    #0a080e 85%,
+    #060508 100%
+  );
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  --accent-primary: #a855f7;
+  --accent-secondary: #c084fc;
+  --accent-light: #f5e6ff;
+  --accent-link: #a78bfa;
+  --accent-link-hover: #c4b5fd;
+}
+
+body[data-narrative] main {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(24, 20, 32, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 2.25rem 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
 .narrative-page {
   padding-top: 2rem;
   padding-bottom: 3rem;
@@ -859,6 +893,10 @@ body.page-home .hero::before {
   outline: 2px solid rgba(122, 184, 232, 0.6);
   outline-offset: 2px;
   border-radius: 2px;
+}
+
+body[data-narrative] .narrative-back:focus-visible {
+  outline-color: rgba(167, 139, 250, 0.6);
 }
 
 .narrative-header {
@@ -970,6 +1008,10 @@ body.page-home .hero::before {
   outline: 2px solid rgba(122, 184, 232, 0.6);
   outline-offset: 2px;
   border-radius: 8px;
+}
+
+body[data-narrative] .narrative-header-logo-link:focus-visible {
+  outline-color: rgba(167, 139, 250, 0.6);
 }
 
 .narrative-header-logo {
@@ -1147,56 +1189,73 @@ body[data-narrative="synkron"] .narrative-content .narrative-section p {
   line-height: 1.65;
 }
 
-/* Narrative prev/next: side nav on desktop (editorial margin-note style), hidden on small screens */
+/* Narrative prev/next: glassy pill buttons matching main page */
 .narrative-prev-next {
   display: contents;
 }
 
 body[data-narrative] .narrative-btn-prev,
 body[data-narrative] .narrative-btn-next {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%) rotate(var(--narrative-nav-rotate, 0deg));
-  z-index: 50;
-  display: inline-block;
-  font-family: inherit;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: rgba(200, 175, 130, 0.55);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  text-decoration: none;
   background: none;
   border: none;
   border-radius: 0;
-  padding: 0.5rem 0.25rem;
-  text-decoration: none;
-  opacity: 0.4;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: transform 0.2s ease;
+  z-index: 50;
+}
+
+body[data-narrative] .narrative-btn-prev img,
+body[data-narrative] .narrative-btn-next img {
+  display: block;
+  width: 1.375rem;
+  height: 1.375rem;
+  object-fit: contain;
+  transition: filter 0.2s ease, transform 0.2s ease;
+  /* dark purplish, still visible */
+  filter: brightness(0) saturate(100%) invert(0.2) sepia(0.4) saturate(2.5) hue-rotate(248deg);
+}
+
+body[data-narrative] .narrative-btn-prev:hover img,
+body[data-narrative] .narrative-btn-prev:focus-visible img,
+body[data-narrative] .narrative-btn-next:hover img,
+body[data-narrative] .narrative-btn-next:focus-visible img,
+body[data-narrative] .narrative-btn-prev.narrative-btn-key-hover img,
+body[data-narrative] .narrative-btn-next.narrative-btn-key-hover img {
+  /* slightly lighter dark purple (subtle), bigger on hover or arrow key */
+  filter: brightness(0) saturate(100%) invert(0.28) sepia(0.4) saturate(2.2) hue-rotate(248deg);
+  transform: scale(1.15);
 }
 
 body[data-narrative] .narrative-btn-prev {
-  left: 1.25rem;
-  --narrative-nav-rotate: -90deg;
+  position: fixed;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
 }
 
 body[data-narrative] .narrative-btn-next {
-  right: 1.25rem;
-  --narrative-nav-rotate: 90deg;
-}
-
-body[data-narrative] .narrative-btn-prev:hover,
-body[data-narrative] .narrative-btn-prev:focus-visible,
-body[data-narrative] .narrative-btn-next:hover,
-body[data-narrative] .narrative-btn-next:focus-visible {
-  opacity: 0.75;
+  position: fixed;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
 }
 
 body[data-narrative] .narrative-btn-prev:hover,
 body[data-narrative] .narrative-btn-prev:focus-visible {
-  transform: translateY(-50%) translateX(-4px) rotate(-90deg);
+  transform: translateY(-50%) scale(1.02);
 }
 
 body[data-narrative] .narrative-btn-next:hover,
 body[data-narrative] .narrative-btn-next:focus-visible {
-  transform: translateY(-50%) translateX(4px) rotate(90deg);
+  transform: translateY(-50%) scale(1.02);
 }
 
 body[data-narrative] .narrative-btn:focus {
@@ -1204,9 +1263,7 @@ body[data-narrative] .narrative-btn:focus {
 }
 
 body[data-narrative] .narrative-btn:focus-visible {
-  outline: 2px solid rgba(200, 175, 130, 0.5);
-  outline-offset: 4px;
-  border-radius: 2px;
+  outline: none;
 }
 
 body[data-narrative] .narrative-btn-disabled {
@@ -1216,10 +1273,27 @@ body[data-narrative] .narrative-btn-disabled {
   pointer-events: none;
 }
 
+/* Mobile: show prev/next in-flow at bottom instead of fixed sides */
 @media (max-width: 768px) {
+  body[data-narrative] .narrative-prev-next {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
   body[data-narrative] .narrative-btn-prev,
   body[data-narrative] .narrative-btn-next {
-    display: none;
+    position: static;
+    transform: none;
+  }
+
+  body[data-narrative] .narrative-btn-prev:hover,
+  body[data-narrative] .narrative-btn-next:hover,
+  body[data-narrative] .narrative-btn-prev:focus-visible,
+  body[data-narrative] .narrative-btn-next:focus-visible {
+    transform: scale(1.02);
   }
 }
 
@@ -1412,6 +1486,14 @@ body[data-narrative] .narrative-btn-disabled {
 .gallery-carousel-dot:focus-visible {
   outline: 2px solid rgba(122, 184, 232, 0.6);
   outline-offset: 2px;
+}
+
+body[data-narrative] .gallery-carousel-arrow:focus-visible {
+  outline-color: rgba(167, 139, 250, 0.6);
+}
+
+body[data-narrative] .gallery-carousel-dot:focus-visible {
+  outline-color: rgba(167, 139, 250, 0.6);
 }
 
 .gallery-carousel-dot.active {

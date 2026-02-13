@@ -75,13 +75,21 @@
       if (slug === 'gallery' && target && target.closest('.gallery-carousel')) return;
       var prev = document.getElementById('narrative-prev');
       var next = document.getElementById('narrative-next');
+      var navButton = null;
       if (e.key === 'ArrowLeft' && prev && prev.href && prev.href !== '#' && !prev.hasAttribute('aria-disabled')) {
         e.preventDefault();
-        window.location.href = prev.href;
+        navButton = prev;
       }
       if (e.key === 'ArrowRight' && next && next.href && next.href !== '#' && !next.hasAttribute('aria-disabled')) {
         e.preventDefault();
-        window.location.href = next.href;
+        navButton = next;
+      }
+      if (navButton) {
+        navButton.classList.add('narrative-btn-key-hover');
+        navButton.focus();
+        setTimeout(function () {
+          window.location.href = navButton.href;
+        }, 120);
       }
     });
   }
