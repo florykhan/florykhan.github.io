@@ -1189,6 +1189,137 @@ body[data-narrative="synkron"] .narrative-content .narrative-section p {
   line-height: 1.65;
 }
 
+/* Next — ML / Data / Software roles: glass card, hover glow, content hierarchy */
+body[data-narrative="next"] .next-roles-main {
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+body[data-narrative="next"] .next-roles-main:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), 0 0 40px rgba(168, 85, 247, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body[data-narrative="next"] .next-roles-inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+body[data-narrative="next"] .next-roles-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+body[data-narrative="next"] .next-roles-subtitle {
+  font-size: 1rem;
+  color: #a0a0a0;
+  line-height: 1.55;
+  margin: 0 0 2rem;
+}
+
+body[data-narrative="next"] .next-roles-content {
+  margin-bottom: 0;
+}
+
+body[data-narrative="next"] .next-roles-block-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+body[data-narrative="next"] .next-roles-body {
+  font-size: 0.95rem;
+  color: #a0a0a0;
+  line-height: 1.65;
+  margin: 0 0 1.5rem;
+}
+
+body[data-narrative="next"] .narrative-section:last-child .next-roles-body {
+  margin-bottom: 0;
+}
+
+body[data-narrative="next"] .next-roles-pills {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+body[data-narrative="next"] .next-roles-pill {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #b0b0b0;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+body[data-narrative="next"] .next-roles-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+body[data-narrative="next"] .next-roles-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+body[data-narrative="next"] .next-roles-contact-link:hover,
+body[data-narrative="next"] .next-roles-contact-link:focus-visible {
+  color: var(--accent-link-hover);
+  border-color: rgba(168, 85, 247, 0.2);
+  background-color: rgba(48, 38, 62, 0.5);
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+body[data-narrative="next"] .next-roles-contact-link:focus {
+  outline: none;
+}
+
+body[data-narrative="next"] .next-roles-contact-link:focus-visible {
+  outline: 2px solid rgba(167, 139, 250, 0.6);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  body[data-narrative="next"] .next-roles-inner {
+    padding: 0;
+  }
+
+  body[data-narrative="next"] .next-roles-title {
+    font-size: 1.5rem;
+  }
+
+  body[data-narrative="next"] .next-roles-pills {
+    gap: 0.4rem;
+  }
+
+  body[data-narrative="next"] .next-roles-pill {
+    font-size: 0.8125rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
 /* Narrative prev/next: glassy pill buttons matching main page */
 .narrative-prev-next {
   display: contents;

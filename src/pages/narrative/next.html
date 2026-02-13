@@ -19,29 +19,39 @@
     </div>
   </nav>
 
-  <main class="container narrative-page">
+  <main class="container narrative-page next-roles-main">
     <p class="narrative-back-wrap">
       <a href="../index.html#timeline" class="narrative-back">← Back to Home</a>
     </p>
 
-    <header class="narrative-header">
-      <h1 class="narrative-title">Next — ML / Data / Software roles</h1>
-      <p class="narrative-desc">Placeholder: Internships and co-op opportunities in impact-driven teams.</p>
-    </header>
+    <div class="next-roles-inner reveal">
+      <header class="narrative-header">
+        <h1 class="narrative-title next-roles-title">Next — ML / Data / Software roles</h1>
+        <p class="narrative-desc next-roles-subtitle">Actively seeking internships and co-op opportunities in data, machine learning, and software engineering with impact-driven teams.</p>
+      </header>
 
-    <div class="narrative-content">
-      <section class="narrative-section">
-        <h2>What I&rsquo;m looking for</h2>
-        <p class="narrative-placeholder">Placeholder content.</p>
-      </section>
-      <section class="narrative-section">
-        <h2>Preferred roles</h2>
-        <p class="narrative-placeholder">Placeholder content.</p>
-      </section>
-      <section class="narrative-section">
-        <h2>How to reach me</h2>
-        <p class="narrative-placeholder">Placeholder content.</p>
-      </section>
+      <div class="narrative-content next-roles-content">
+        <section class="narrative-section" aria-labelledby="next-looking-heading">
+          <h2 id="next-looking-heading" class="next-roles-block-heading">What I&rsquo;m looking for</h2>
+          <p class="next-roles-body">Hands-on roles where I can work with real datasets, build and evaluate models, and contribute to production systems alongside experienced engineers and data scientists.</p>
+        </section>
+        <section class="narrative-section" aria-labelledby="next-roles-heading">
+          <h2 id="next-roles-heading" class="next-roles-block-heading">Preferred roles</h2>
+          <ul class="next-roles-pills" aria-label="Preferred role types">
+            <li><span class="next-roles-pill">Data Analyst Intern</span></li>
+            <li><span class="next-roles-pill">Data Scientist Intern</span></li>
+            <li><span class="next-roles-pill">Machine Learning Engineer Intern</span></li>
+            <li><span class="next-roles-pill">Software Engineer Intern</span></li>
+          </ul>
+        </section>
+        <section class="narrative-section" aria-labelledby="next-reach-heading">
+          <h2 id="next-reach-heading" class="next-roles-block-heading">How to reach me</h2>
+          <p class="next-roles-body">The best way to reach me is via the contact form. I&rsquo;m always happy to chat about projects, internships, or collaboration opportunities.</p>
+          <div class="next-roles-contact-links" aria-label="Contact options">
+            <a href="../index.html#contact" class="next-roles-contact-link contact-icon-link" aria-label="Contact form" title="Send a message">Contact form</a>
+          </div>
+        </section>
+      </div>
     </div>
 
   </main>
@@ -52,5 +62,26 @@
 
   <script src="../../scripts/narrative-data.js"></script>
   <script src="../../scripts/narrative-nav.js"></script>
+  <script>
+    (function () {
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var reveals = document.querySelectorAll('.reveal');
+      if (prefersReducedMotion || !reveals.length) {
+        reveals.forEach(function (el) { el.classList.add('reveal-visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal-visible');
+            }
+          });
+        },
+        { rootMargin: '0px 0px -60px 0px', threshold: 0.1, once: true }
+      );
+      reveals.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
 </body>
 </html>
