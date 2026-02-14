@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>house-price-ml (v1 baseline) | Ilian Khankhalaev</title>
+  <title>House Price Prediction — v1 Baseline | Ilian Khankhalaev</title>
   <link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body class="page-projects">
@@ -23,46 +23,62 @@
     <a href="../projects.html" class="project-back">← Back to Projects</a>
 
     <header class="project-header">
-      <h1 class="project-title">house-price-ml (v1 baseline)</h1>
-      <p class="project-summary">Placeholder: Machine learning project description.</p>
+      <h1 class="project-title">House Price Prediction — v1 Baseline Linear Model</h1>
+      <p class="project-summary">A baseline machine learning pipeline for predicting median house prices in California. This first version establishes a clean, reproducible workflow for loading, exploring, and modeling structured tabular data using Linear Regression and the Normal Equation.</p>
       <div class="project-meta-row">
         <div class="project-meta-links">
-          <a href="#">Live Demo</a>
-          <a href="#">GitHub Repo</a>
-          <a href="../projects.html">← Back to Projects</a>
+          <a href="https://github.com/florykhan/house-price-ml-v2" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          <a href="./house-price-ml.html">View v2 (Feature Engineering) →</a>
         </div>
-        <div class="project-detail-labels"></div>
+        <div class="project-detail-labels">
+          <span class="project-card-label project-card-report">Report</span>
+        </div>
       </div>
     </header>
 
     <section class="project-detail-section">
-      <h2>Overview</h2>
-      <p>Placeholder overview text for the project.</p>
+      <h2>Problem &amp; Context</h2>
+      <p>The goal of this version is to build a clean, reproducible baseline model using Linear Regression, establish a solid workflow for loading, exploring, and modeling structured tabular data, and evaluate baseline performance to guide improvements in future versions. This version uses the Normal Equation (closed-form solution) for Linear Regression as implemented in scikit-learn.</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>Problem &amp; Motivation</h2>
-      <p>Placeholder text describing the problem and motivation.</p>
+      <h2>Dataset</h2>
+      <p>The project uses the California Housing dataset (~20,000 samples, 8 numerical + 1 categorical feature) with <code>median_house_value</code> as the target. Features include geographic coordinates (<code>longitude</code>, <code>latitude</code>), housing stock (<code>housing_median_age</code>, <code>total_rooms</code>, <code>total_bedrooms</code>), demographic context (<code>population</code>, <code>households</code>), <code>median_income</code>, and <code>ocean_proximity</code>.</p>
+      <p><strong>Key insight from EDA:</strong> <code>median_income</code> shows the strongest positive correlation with house value.</p>
     </section>
 
     <section class="project-detail-section">
       <h2>What I Built</h2>
-      <p>Placeholder text describing what was built.</p>
+      <ul class="project-feature-list">
+        <li><strong>Exploratory Data Analysis</strong> — Inspected schema, data types, and null values; visualized distributions; computed correlation matrix; examined categorical feature impact</li>
+        <li><strong>Baseline feature selection</strong> — median_income, housing_median_age, latitude, longitude, ocean_proximity</li>
+        <li><strong>Preprocessing</strong> — ColumnTransformer for numeric &amp; categorical columns; OneHotEncoder for ocean_proximity</li>
+        <li><strong>Linear Regression</strong> — Trained using the Normal Equation via scikit-learn</li>
+        <li><strong>Evaluation</strong> — RMSE and R² score on test set</li>
+      </ul>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Results</h2>
+      <p><strong>RMSE:</strong> ≈ $73,000 &nbsp;|&nbsp; <strong>R²:</strong> ≈ 0.6</p>
+      <p>The model explains ~60% of variance in housing prices. It captures strong linear trends (e.g., income vs. price) but misses nonlinear and interaction effects — which motivated the feature engineering and enhanced pipeline in v2.</p>
     </section>
 
     <section class="project-detail-section">
       <h2>Tech Stack</h2>
-      <p>Python · PyTorch · NumPy</p>
+      <div class="tech-tags">
+        <span>Python 3.11</span>
+        <span>pandas</span>
+        <span>NumPy</span>
+        <span>matplotlib</span>
+        <span>scikit-learn</span>
+        <span>Jupyter Notebook</span>
+      </div>
     </section>
 
     <section class="project-detail-section">
-      <h2>Results / Visuals</h2>
-      <p class="results-placeholder">Placeholder for plots, screenshots, or visual results.</p>
-    </section>
-
-    <section class="project-detail-section">
-      <h2>Challenges &amp; Learnings</h2>
-      <p>Placeholder text for challenges and learnings.</p>
+      <h2>Key Takeaways</h2>
+      <p>A clean baseline provides a solid reference point for further experimentation. Median income is the most informative predictor in this dataset. Performance can be improved through feature transformations, nonlinear terms, and regularization — which led to the v2 enhanced pipeline.</p>
     </section>
 
     <p style="margin-top: 2rem;">

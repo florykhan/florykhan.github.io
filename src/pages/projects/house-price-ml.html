@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>House-Price-ML (v2 Feature Engineering) | Ilian Khankhalaev</title>
+  <title>House Price Prediction — v2 Enhanced ML Pipeline | Ilian Khankhalaev</title>
   <link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body class="page-projects">
@@ -23,13 +23,12 @@
     <a href="../projects.html" class="project-back">← Back to Projects</a>
 
     <header class="project-header">
-      <h1 class="project-title">House-Price-ML (v2 Feature Engineering)</h1>
-      <p class="project-summary">Placeholder: ML pipeline for house price prediction with advanced feature engineering.</p>
+      <h1 class="project-title">House Price Prediction — v2 Enhanced ML Pipeline</h1>
+      <p class="project-summary">An advanced, modular machine learning pipeline for predicting median house prices in California. Version 2 introduces feature engineering, regularized linear models (Ridge, Lasso), cross-validation, hyperparameter tuning, and a custom Gradient Descent Regressor built from scratch — all organized into reusable source modules.</p>
       <div class="project-meta-row">
         <div class="project-meta-links">
-          <a href="#">Live Demo</a>
-          <a href="#">GitHub Repo</a>
-          <a href="../projects.html">← Back to Projects</a>
+          <a href="https://github.com/florykhan/house-price-ml-v2" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+          <a href="./house-price-ml-v1-baseline.html">← View v1 (Baseline)</a>
         </div>
         <div class="project-detail-labels">
           <span class="project-card-label project-card-report">Report</span>
@@ -38,33 +37,61 @@
     </header>
 
     <section class="project-detail-section">
-      <h2>Overview</h2>
-      <p>Placeholder overview text for the project.</p>
+      <h2>Problem &amp; Context</h2>
+      <p>The goal of v2 is to build a fully modular, extensible ML pipeline for structured tabular data; introduce feature engineering and standardization to improve stability and performance; implement and compare multiple linear models (OLS, Ridge, Lasso, custom Gradient Descent); evaluate robustness through 5-fold cross-validation and hyperparameter tuning; and establish a reproducible training workflow that cleanly separates preprocessing, training, evaluation, and inference.</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>Problem &amp; Motivation</h2>
-      <p>Placeholder text describing the problem and motivation.</p>
+      <h2>What&rsquo;s New in v2 (vs v1)</h2>
+      <ul class="project-feature-list">
+        <li><strong>Feature Engineering</strong> — Full transformations and scaling (v1 had minimal)</li>
+        <li><strong>Models</strong> — Custom Gradient Descent, OLS, Ridge, Lasso (v1 had OLS only)</li>
+        <li><strong>Cross-Validation</strong> — 5-fold CV for stability analysis (v1 had none)</li>
+        <li><strong>Pipeline</strong> — Modular Python pipeline in <code>src/</code> (v1 was notebook-only)</li>
+        <li><strong>Performance</strong> — Lower RMSE after feature engineering and regularization</li>
+      </ul>
     </section>
 
     <section class="project-detail-section">
       <h2>What I Built</h2>
-      <p>Placeholder text describing what was built.</p>
+      <ul class="project-feature-list">
+        <li><strong>Custom modular ML pipeline</strong> — Clean separation of preprocessing, training, evaluation, and utilities in <code>src/</code></li>
+        <li><strong>Feature engineering &amp; standardization</strong> — Consistent transformations across training and inference</li>
+        <li><strong>Multiple linear models</strong> — OLS, Ridge (L2), Lasso (L1), plus custom Gradient Descent Regressor with configurable learning rate, iterations, and convergence tracking</li>
+        <li><strong>5-fold Cross-Validation</strong> — Model stability and variance assessment</li>
+        <li><strong>Hyperparameter tuning</strong> — Grid search for regularized models</li>
+        <li><strong>Reproducible pipeline</strong> — End-to-end training via <code>python3 -m src.train</code></li>
+        <li><strong>Five structured notebooks</strong> — Exploration, custom GD evaluation, sklearn baseline, CV comparison, pipeline demo</li>
+      </ul>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Results (Summary)</h2>
+      <p><strong>Custom Gradient Descent Regressor:</strong> Converged in ~1500 iterations. Test RMSE: ~74.6K USD. Test R²: ~0.57.</p>
+      <p>The model explains ~57% of variance in housing prices, captures strong linear trends (e.g., median income → price), and misses nonlinear and interaction effects. Full model comparisons (Ridge, Lasso, CV results) are documented in the repository&rsquo;s <code>reports/report.md</code>.</p>
     </section>
 
     <section class="project-detail-section">
       <h2>Tech Stack</h2>
-      <p>Placeholder text for technologies used.</p>
+      <div class="tech-tags">
+        <span>Python 3.11</span>
+        <span>pandas</span>
+        <span>NumPy</span>
+        <span>matplotlib</span>
+        <span>scikit-learn</span>
+        <span>Custom Gradient Descent</span>
+        <span>Jupyter Notebook</span>
+      </div>
     </section>
 
     <section class="project-detail-section">
-      <h2>Results / Visuals</h2>
-      <p class="results-placeholder">Placeholder for plots, screenshots, or visual results.</p>
+      <h2>Architecture / How It Works</h2>
+      <p>The pipeline runs end-to-end via <code>python3 -m src.train</code>. Data is loaded from <code>data/raw/</code>, preprocessed and feature-engineered dynamically (no persisted processed data), then used to train and evaluate models. The <code>src/</code> modules handle config, data loading, feature engineering, preprocessing, gradient descent, evaluation, hyperparameter tuning, and model I/O. Notebooks document the full development workflow from exploration through baselines, cross-validation, and pipeline demo.</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>Challenges &amp; Learnings</h2>
-      <p>Placeholder text for challenges and learnings.</p>
+      <h2>Key Takeaways</h2>
+      <p>Version 2 demonstrates ML engineering best practices: modularity, reproducibility, and robust evaluation. Feature engineering and regularization improve over the v1 baseline. The custom Gradient Descent implementation reinforces understanding of optimization fundamentals. Future directions include integrated GridSearchCV, nonlinear models (Random Forest, XGBoost), experiment tracking (MLflow, W&amp;B), and production-ready tooling.</p>
     </section>
 
     <p style="margin-top: 2rem;">

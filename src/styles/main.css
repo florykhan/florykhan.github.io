@@ -3073,6 +3073,8 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
   font-size: 1rem;
   color: #a0a0a0;
   line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
   margin: 0 0 1.5rem;
 }
 
@@ -3130,6 +3132,8 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
   font-size: 0.95rem;
   color: #a0a0a0;
   line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
   margin: 0;
 }
 
@@ -3137,6 +3141,8 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
   font-size: 0.9rem;
   color: #666;
   font-style: italic;
+  text-align: justify;
+  hyphens: auto;
   margin: 0;
 }
 
@@ -3180,6 +3186,8 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
   margin: 0;
   padding-left: 1.25rem;
   font-size: 0.95rem;
+  text-align: justify;
+  hyphens: auto;
   color: #a0a0a0;
   line-height: 1.7;
 }
