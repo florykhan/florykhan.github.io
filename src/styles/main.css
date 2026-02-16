@@ -56,23 +56,9 @@ body.page-projects {
   --accent-link-hover: #67e8f9;
 }
 
-/* Projects listing page: smooth teal/green tinted gradient, no texture */
+/* Projects listing page: background from .page-bg (color #080c0c) */
 body.page-projects-listing {
-  background-color: #080c0c;
-  background-image: linear-gradient(
-    165deg,
-    #0a0d0d 0%,
-    #0b0f0f 12%,
-    #0c1010 25%,
-    #0d1212 38%,
-    #0e1313 50%,
-    #0c1111 62%,
-    #0b0e0e 75%,
-    #0a0d0d 88%,
-    #080c0c 100%
-  );
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background-color: transparent;
 }
 
 body.page-projects-listing main {
@@ -80,23 +66,9 @@ body.page-projects-listing main {
   z-index: 1;
 }
 
-/* Project detail pages: smooth dark blue gradient, no texture */
+/* Project detail pages: background from .page-bg (color #080a0f) */
 body.page-projects:not(.page-projects-listing) {
-  background-color: #080a0f;
-  background-image: linear-gradient(
-    165deg,
-    #0a0d12 0%,
-    #0b0e14 12%,
-    #0c0f16 25%,
-    #0d1018 38%,
-    #0e111a 50%,
-    #0c0f16 62%,
-    #0b0e12 75%,
-    #0a0d12 88%,
-    #080a0f 100%
-  );
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background-color: transparent;
 }
 
 body.page-projects:not(.page-projects-listing) main {
@@ -104,24 +76,132 @@ body.page-projects:not(.page-projects-listing) main {
   z-index: 1;
 }
 
-/* Home page: smooth dark gradient, no texture (avoids banding) */
-body.page-home {
+/* Shared fixed background on all pages (separate layer to avoid scroll shake) */
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
   background-color: #060508;
-  background-image: linear-gradient(
-    165deg,
-    #060508 0%,
-    #0a080e 15%,
-    #0e0c14 30%,
-    #120f1a 50%,
-    #0e0c14 70%,
-    #0a080e 85%,
-    #060508 100%
-  );
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.22) 35%, rgba(0, 0, 0, 0.35) 100%),
+    linear-gradient(
+      165deg,
+      rgba(6, 5, 8, 0.88) 0%,
+      rgba(18, 12, 28, 0.82) 25%,
+      rgba(22, 16, 36, 0.78) 50%,
+      rgba(18, 12, 28, 0.82) 75%,
+      rgba(6, 5, 8, 0.88) 100%
+    ),
+    url('../assets/background.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Home: purplish overlay (default in .page-bg) */
+body.page-home .page-bg { background-color: #060508; }
+
+/* Narrative pages: same purplish overlay, background-blur2.png (darker) */
+body[data-narrative] .page-bg {
+  background-color: #060508;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.35) 35%, rgba(0, 0, 0, 0.48) 100%),
+    linear-gradient(
+      165deg,
+      rgba(6, 5, 8, 0.92) 0%,
+      rgba(18, 12, 28, 0.88) 25%,
+      rgba(22, 16, 36, 0.86) 50%,
+      rgba(18, 12, 28, 0.88) 75%,
+      rgba(6, 5, 8, 0.92) 100%
+    ),
+    url('../assets/background-blur2.png');
+}
+
+/* Projects listing: greenish/teal overlay over background image */
+body.page-projects-listing .page-bg {
+  background-color: #080c0c;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.22) 35%, rgba(0, 0, 0, 0.35) 100%),
+    linear-gradient(
+      165deg,
+      rgba(10, 13, 13, 0.88) 0%,
+      rgba(11, 15, 15, 0.86) 12%,
+      rgba(12, 16, 16, 0.84) 25%,
+      rgba(13, 18, 18, 0.82) 38%,
+      rgba(14, 19, 19, 0.82) 50%,
+      rgba(12, 17, 17, 0.84) 62%,
+      rgba(11, 14, 14, 0.86) 75%,
+      rgba(10, 13, 13, 0.88) 88%,
+      rgba(8, 12, 12, 0.9) 100%
+    ),
+    url('../assets/background-blur.png');
+}
+
+/* Project detail pages: darker dark blue overlay over background image */
+body.page-projects:not(.page-projects-listing) .page-bg {
+  background-color: #080a0f;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.5) 100%),
+    linear-gradient(
+      165deg,
+      rgba(10, 13, 18, 0.94) 0%,
+      rgba(11, 14, 20, 0.92) 12%,
+      rgba(12, 15, 22, 0.9) 25%,
+      rgba(13, 16, 24, 0.9) 38%,
+      rgba(14, 17, 26, 0.9) 50%,
+      rgba(12, 15, 22, 0.9) 62%,
+      rgba(11, 14, 18, 0.92) 75%,
+      rgba(10, 13, 18, 0.94) 88%,
+      rgba(8, 10, 15, 0.96) 100%
+    ),
+    url('../assets/background-blur2.png');
+}
+
+body.page-home,
+body.page-projects-listing,
+body.page-projects:not(.page-projects-listing),
+body[data-narrative] {
+  background-color: transparent;
 }
 
 body.page-home main {
+  position: relative;
+  z-index: 1;
+}
+
+/* From first section down: use background-blur.png (same purple overlay as hero) */
+body.page-home .page-home-section-bg {
+  position: fixed;
+  top: 100vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: #060508;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.22) 35%, rgba(0, 0, 0, 0.35) 100%),
+    linear-gradient(
+      165deg,
+      rgba(6, 5, 8, 0.88) 0%,
+      rgba(18, 12, 28, 0.82) 25%,
+      rgba(22, 16, 36, 0.78) 50%,
+      rgba(18, 12, 28, 0.82) 75%,
+      rgba(6, 5, 8, 0.88) 100%
+    ),
+    url('../assets/background-blur.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+body.page-home main > * {
   position: relative;
   z-index: 1;
 }
@@ -554,18 +634,6 @@ body.page-home .hero::before {
   position: relative;
 }
 
-.timeline-marquee-wrap::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 6rem;
-  height: 100%;
-  background: linear-gradient(to right, transparent, rgba(6, 5, 8, 0.92));
-  pointer-events: none;
-  z-index: 1;
-}
-
 /* Minimal hint that timeline is scrollable and cards are clickable */
 .timeline-hint {
   font-size: 0.75rem;
@@ -836,21 +904,9 @@ body.page-home .hero::before {
    Narrative detail pages
    ======================================== */
 
-/* Narrative pages: same dark purple vibe as main page */
+/* Narrative pages: background from .page-bg (color #060508), same purple vibe as main page */
 body[data-narrative] {
-  background-color: #060508;
-  background-image: linear-gradient(
-    165deg,
-    #060508 0%,
-    #0a080e 15%,
-    #0e0c14 30%,
-    #120f1a 50%,
-    #0e0c14 70%,
-    #0a080e 85%,
-    #060508 100%
-  );
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background-color: transparent;
   --accent-primary: #a855f7;
   --accent-secondary: #c084fc;
   --accent-light: #f5e6ff;

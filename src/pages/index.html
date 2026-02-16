@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body class="page-home">
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-home-section-bg" aria-hidden="true"></div>
   <!-- Sticky Nav -->
   <nav class="nav-sticky">
     <div class="nav-inner">
@@ -496,6 +498,18 @@
   <script src="../scripts/timeline-marquee-extend.js"></script>
   <script src="../scripts/type-on-scroll.js"></script>
   <script src="../scripts/scroll-arrow.js"></script>
+  <script>
+    (function () {
+      if (!document.body.classList.contains('page-home')) return;
+      var hero = document.getElementById('hero');
+      if (!hero) return;
+      function update() {
+        document.body.classList.toggle('past-hero', window.scrollY >= hero.offsetHeight);
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
   <script>
     (function () {
       var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
