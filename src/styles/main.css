@@ -265,16 +265,16 @@ main {
   padding-top: 3.5rem;
 }
 
-/* Centered navbar container: equal horizontal padding, logo and links aligned within same band */
+/* Centered navbar container: same max-width band centered on all viewports */
 .nav-inner {
   max-width: 960px;
-  margin: 0 auto 0 7.6rem;
+  margin: 0 auto;
   padding: 1rem 1.85rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  /* Shift whole navbar right: increase the left margin value (e.g. 2.5rem) */
+  box-sizing: border-box;
 }
 
 .nav-logo {
@@ -282,8 +282,7 @@ main {
   color: #fff;
   text-decoration: none;
   font-size: 0.95rem;
-  /* Move only the name: positive = right, negative = left */
-  margin-left: 4rem;
+  margin-left: 7.5rem;
 }
 
 .nav-sticky ul {
@@ -304,6 +303,12 @@ main {
 .nav-sticky a:hover,
 .nav-sticky a.active {
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .nav-logo {
+    margin-left: 0;
+  }
 }
 
 /* ========================================
@@ -3421,6 +3426,7 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
 
   .nav-logo {
     font-size: 0.9rem;
+    margin-left: 0;
   }
 
   .contact-form {
