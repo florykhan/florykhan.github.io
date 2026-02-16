@@ -22,12 +22,12 @@
   <main class="container project-detail">
     <p><a href="../projects.html" class="project-back">← Back to Projects</a></p>
     <header class="project-header">
-      <h1 class="project-title">Personal Website</h1>
-      <p class="project-summary">Placeholder: Coursework or systems project description.</p>
+      <h1 class="project-title">Personal Website — Static Portfolio</h1>
+      <p class="project-summary">Static personal portfolio site showcasing projects, experience, education, and contact. Deployed to GitHub Pages with automatic CI/CD. Vanilla HTML, CSS, and JavaScript — no framework.</p>
       <div class="project-meta-row">
         <div class="project-meta-links">
-          <a href="#">Live Demo</a>
-          <a href="#">GitHub Repo</a>
+          <a href="https://florykhan.github.io/personal-website/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <a href="https://github.com/florykhan/personal-website" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
         </div>
         <div class="project-detail-labels">
           <span class="project-card-label project-card-demo">Demo</span>
@@ -36,33 +36,47 @@
     </header>
 
     <section class="project-detail-section">
-      <h2>Overview</h2>
-      <p>Placeholder overview text for the project.</p>
+      <h2>Problem &amp; Context</h2>
+      <p>A personal portfolio site needs to present projects, experience, education, and contact information in a clear, accessible way. The goal was to build a static site that loads fast, works without JavaScript where possible, and deploys reliably. Choosing vanilla HTML/CSS/JS keeps the stack simple and avoids framework overhead while still allowing interactive features like timeline marquees, scroll reveals, and form handling.</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>Problem &amp; Motivation</h2>
-      <p>Placeholder text describing the problem and motivation.</p>
-    </section>
-
-    <section class="project-detail-section">
-      <h2>What I Built</h2>
-      <p>Placeholder text describing what was built.</p>
+      <h2>What It Does</h2>
+      <ul class="project-feature-list">
+        <li>Hero and intro section with tagline, CTA links (Resume, GitHub, LinkedIn), and profile photo</li>
+        <li>Featured Projects — cards linking to project detail pages with demo/report labels and tech tags</li>
+        <li>Narrative Timeline — horizontal marquee showcasing career path (Gallery → SFU → Synkron → Projects → Next)</li>
+        <li>Skills &amp; Tech Stack — languages, ML/data tools, web &amp; tools grouped in chips</li>
+        <li>Experience — job entries with company logos, roles, dates, bullets, and skill tags</li>
+        <li>Education — degree entries with institution logos and metadata</li>
+        <li>Volunteering — mentorship and other volunteer roles</li>
+        <li>Posts — cards linking to LinkedIn write-ups (e.g., ML Hackathon, TelusGuardAI, GymWhisper)</li>
+        <li>Contact form (Formspree) plus email, LinkedIn, GitHub links</li>
+        <li>Sticky navigation, scroll reveals, type-on-scroll effects</li>
+        <li>Responsive layout for mobile and desktop</li>
+      </ul>
     </section>
 
     <section class="project-detail-section">
       <h2>Tech Stack</h2>
-      <p>C · Linux</p>
+      <div class="tech-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>GitHub Pages</span>
+        <span>GitHub Actions</span>
+        <span>Formspree</span>
+      </div>
     </section>
 
     <section class="project-detail-section">
-      <h2>Results / Visuals</h2>
-      <p class="results-placeholder">Placeholder for plots, screenshots, or visual results.</p>
+      <h2>Architecture / How It Works</h2>
+      <p>The site is a static multi-page HTML site. Pages live under <code>src/pages/</code> (index, projects, project detail pages, narrative pages). Styles are in <code>src/styles/main.css</code>; scripts handle timeline marquee, type-on-scroll, scroll arrow, and contact form submission. The contact form posts to Formspree for email delivery. Deployment uses GitHub Actions: on push to <code>main</code>, a prepare script runs and outputs to <code>dist/</code>, which is uploaded and deployed to GitHub Pages. Local development: open <code>src/pages/index.html</code> or serve the <code>src/</code> directory; paths assume pages are under <code>src/pages/</code>.</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>Challenges &amp; Learnings</h2>
-      <p>Placeholder text for challenges and learnings.</p>
+      <h2>Key Takeaways</h2>
+      <p>Building a portfolio in vanilla HTML/CSS/JS demonstrates that you can ship a polished, fast site without a framework. The narrative timeline marquee and scroll reveals add personality and interactivity while keeping the core content accessible. GitHub Actions + Pages provides reliable, zero-cost hosting with automatic deployments on every push.</p>
     </section>
 
     <p style="margin-top: 2rem;">

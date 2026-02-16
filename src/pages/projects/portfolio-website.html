@@ -22,12 +22,12 @@
   <main class="container project-detail">
     <p><a href="../projects.html" class="project-back">← Back to Projects</a></p>
     <header class="project-header">
-      <h1 class="project-title">Portfolio Website</h1>
-      <p class="project-summary">Placeholder: Smaller or side project description.</p>
+      <h1 class="project-title">Portfolio Website — My First Web Project</h1>
+      <p class="project-summary">A responsive one-page portfolio built with React and Vite for <strong>CMPT 276 — Introduction to Software Engineering</strong> at Simon Fraser University. It was my first web project ever: component-based development, custom CSS, and deployment on GitHub Pages.</p>
       <div class="project-meta-row">
         <div class="project-meta-links">
-          <a href="#">Live Demo</a>
-          <a href="#">GitHub Repo</a>
+          <a href="https://florykhan.github.io/portfolio-course-project/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <a href="https://github.com/florykhan/portfolio-course-project" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
         </div>
         <div class="project-detail-labels">
           <span class="project-card-label project-card-demo">Demo</span>
@@ -37,33 +37,59 @@
     </header>
 
     <section class="project-detail-section">
-      <h2>Overview</h2>
-      <p>Placeholder overview text for the project.</p>
+      <h2>Context &amp; Motivation</h2>
+      <p>This project was part of CMPT 276 at SFU, where the goal was to build a personal portfolio that showcases projects, technical skills, academic background, and contact information. I wanted a single-page site with alternating sections and a clean UI to practice component-based development and learn deployment with GitHub Pages. It was my first time building a full web application from scratch.</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>Problem &amp; Motivation</h2>
-      <p>Placeholder text describing the problem and motivation.</p>
-    </section>
-
-    <section class="project-detail-section">
-      <h2>What I Built</h2>
-      <p>Placeholder text describing what was built.</p>
+      <h2>What It Does</h2>
+      <ul class="project-feature-list">
+        <li><strong>Responsive layout</strong> — Works on mobile and desktop</li>
+        <li><strong>Sticky navigation bar</strong> — Easy navigation while scrolling</li>
+        <li><strong>Hero section</strong> — Profile image and link to SFU</li>
+        <li><strong>Skills &amp; projects</strong> — Sections with images and descriptions</li>
+        <li><strong>Academic achievements and experience</strong> — Education and work highlights</li>
+        <li><strong>Footer</strong> — Clickable social links and resume download</li>
+      </ul>
     </section>
 
     <section class="project-detail-section">
       <h2>Tech Stack</h2>
-      <p>Python · CLI</p>
+      <div class="tech-tags">
+        <span>React</span>
+        <span>Vite</span>
+        <span>CSS</span>
+        <span>Git &amp; GitHub</span>
+        <span>GitHub Pages</span>
+      </div>
     </section>
 
     <section class="project-detail-section">
-      <h2>Results / Visuals</h2>
-      <p class="results-placeholder">Placeholder for plots, screenshots, or visual results.</p>
+      <h2>Project Structure</h2>
+      <p>The app is organized around React components and static assets:</p>
+      <ul class="project-feature-list">
+        <li><code>src/components/</code> — React components (NavBar, Hero, Projects, Skills, etc.)</li>
+        <li><code>public/</code> — Static assets (images, icons)</li>
+        <li><code>index.html</code> — Entry HTML file</li>
+        <li><code>index.css</code> — Global styling</li>
+      </ul>
+      <p>Vite is used for fast development and builds, the output is deployed to GitHub Pages.</p>
     </section>
 
     <section class="project-detail-section">
-      <h2>Challenges &amp; Learnings</h2>
-      <p>Placeholder text for challenges and learnings.</p>
+      <h2>GitHub Practices</h2>
+      <p>As part of the course, the project followed solid GitHub workflow:</p>
+      <ul class="project-feature-list">
+        <li>10+ GitHub issues created with linked commits</li>
+        <li>Feature branches and pull requests for changes</li>
+        <li>Clear, descriptive commit messages</li>
+        <li>Valid <strong>MIT License</strong> — simple and permissive, so others can reuse or modify the code with attribution</li>
+      </ul>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Key Takeaways</h2>
+      <p>This was my first real web project and it taught me the basics of React, component structure, and deploying a static site. Building something end-to-end — from local dev with Vite to a live URL on GitHub Pages — gave me confidence to tackle bigger full-stack projects later. The alternating sections and clean UI were a good exercise in layout and CSS, and the course emphasis on issues, branches, and PRs set up habits I still use today.</p>
     </section>
 
     <p style="margin-top: 2rem;">
