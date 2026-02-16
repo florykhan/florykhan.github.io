@@ -2993,7 +2993,7 @@ body.page-projects .projects-nav a.is-active:focus-visible {
    ======================================== */
 
 .project-detail {
-  padding-top: 2rem;
+  padding-top: 8rem;
 }
 
 .project-detail .project-back {
@@ -3003,6 +3003,14 @@ body.page-projects .projects-nav a.is-active:focus-visible {
   text-decoration: none;
   font-size: 0.9rem;
   transition: color 0.15s ease;
+}
+
+.project-detail > p:first-child {
+  padding-top: 2rem;
+}
+
+.project-detail > p:first-child .project-back {
+  margin-bottom: 0;
 }
 
 .project-detail .project-back:hover {
@@ -3017,11 +3025,13 @@ body.page-projects .project-back {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  transition: transform 0.2s ease;
+  opacity: 0.68;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 body.page-projects .project-back:hover,
 body.page-projects .project-back:focus-visible {
+  opacity: 1;
   transform: scale(1.02);
 }
 
@@ -3075,7 +3085,7 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
   line-height: 1.6;
   text-align: justify;
   hyphens: auto;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.4rem;
 }
 
 .project-detail .project-meta-row {
