@@ -3305,6 +3305,21 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
   margin-bottom: 0;
 }
 
+/* Project card: title and logo on same line (e.g. Group ML card) */
+.project-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card-title-row h3 {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+}
+
 .project-card-icon {
   font-style: normal;
   line-height: 1;
@@ -3316,6 +3331,7 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
   height: 1.25rem;
   width: auto;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .project-card-logo-sfu {
@@ -3350,16 +3366,6 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
 .project-card-in-progress {
   color: #f5e6d5;
   background-color: #4a3d2d;
-}
-
-.project-card-report {
-  color: #d5e5f5;
-  background-color: #2d3d4a;
-}
-
-.project-card-shipped {
-  color: #d5f5e0;
-  background-color: #2d4a35;
 }
 
 .project-card-research {
