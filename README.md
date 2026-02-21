@@ -1,6 +1,6 @@
 # 🌐 Personal Website — Static Portfolio
 
-This repository implements a **static personal portfolio site** showcasing projects, experience, education, and contact. Deployed to GitHub Pages with automatic CI/CD. Vanilla HTML, CSS, and JavaScript, **no framework**. Fast, accessible, and zero-cost hosting.
+This repository implements a **static personal portfolio site** showcasing projects, experience, education, and contact. Deployed to GitHub Pages with automatic CI/CD. Vanilla HTML, CSS, and JavaScript, **no framework**. Fast, accessible, and zero-cost hosting. 🔴 **Live Site**: **https://florykhan.github.io**
 
 ---
 
