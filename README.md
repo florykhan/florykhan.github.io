@@ -18,7 +18,7 @@ This site demonstrates that a polished, interactive portfolio can be shipped wit
 
 ## 🔴 Live Site
 
-**florykhan.github.io**
+**https://florykhan.github.io**
 
 ---
 
