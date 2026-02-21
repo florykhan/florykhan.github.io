@@ -16,6 +16,12 @@ This site demonstrates that a polished, interactive portfolio can be shipped wit
 
 ---
 
+## 🔴 Live Site
+
+**https://florykhan.github.io/personal-website/**
+
+---
+
 ## ✨ Key Features
 
 - **Hero & Intro** — tagline, CTA links (Resume, GitHub, LinkedIn), profile photo.
@@ -118,12 +124,6 @@ Then open **http://localhost:8000/pages/index.html** in your browser.
 ### 3️⃣ Paths
 
 All paths assume pages live under `src/pages/`. Styles, scripts, and assets are referenced relative to that structure.
-
----
-
-## 🌐 Live Site
-
-**https://florykhan.github.io/personal-website/**
 
 ---
 
