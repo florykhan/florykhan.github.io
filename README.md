@@ -16,12 +16,6 @@ This site demonstrates that a polished, interactive portfolio can be shipped wit
 
 ---
 
-## 🔴 Live Site
-
-**https://florykhan.github.io**
-
----
-
 ## ✨ Key Features
 
 - **Hero & Intro** — tagline, CTA links (Resume, GitHub, LinkedIn), profile photo.
@@ -33,6 +27,12 @@ This site demonstrates that a polished, interactive portfolio can be shipped wit
 - **Contact** — Formspree-powered form plus email, LinkedIn, GitHub links.
 - **Interactions** — sticky nav, scroll reveals, type-on-scroll effects, timeline marquee animation.
 - **Responsive layout** for mobile and desktop.
+
+---
+
+## 🔴 Live Site
+
+**https://florykhan.github.io**
 
 ---
 
