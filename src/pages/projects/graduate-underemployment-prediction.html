@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graduate Underemployment Prediction | Ilian Khankhalaev</title>
+  <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body class="page-projects">
+  <div class="page-bg" aria-hidden="true"></div>
+  <nav class="nav-sticky">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ilian Khankhalaev</a>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../../assets/Ilian-Khankhalaev-Resume.pdf">Resume</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container project-detail">
+    <p><a href="../projects.html" class="project-back">← Back to Projects</a></p>
+    <header class="project-header">
+      <h1 class="project-title">Graduate Underemployment / Overqualification Prediction</h1>
+      <p class="project-summary">Full machine learning pipeline for predicting overqualification (underemployment) in recruitment using the NGS (National Graduate Survey) structured hiring dataset. Built for the SFU Data Science Student Society ML Hackathon; uses CatBoost with a focus on predictive performance and interpretability (feature importance, optional SHAP).</p>
+      <div class="project-meta-row">
+        <div class="project-meta-links">
+          <a href="https://github.com/florykhan/graduate-underemployment-prediction" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        </div>
+        <div class="project-detail-labels">
+          <img src="../../assets/icons/team.png" alt="" class="project-card-logo" width="24" height="24" title="Team Project">
+        </div>
+      </div>
+    </header>
+
+    <section class="project-detail-section">
+      <h2>Problem &amp; Context</h2>
+      <p>The goal was to build a robust model that accurately estimates overqualification probability from candidate attributes (education, experience, skills, demographics), work with the NGS dataset and its feature structure (survey codes, missing conventions), and train a CatBoost-based model with validation and leaderboard-oriented iteration. The solution achieved <strong>0.75174</strong> accuracy on the Public leaderboard and <strong>0.70511</strong> on the Private leaderboard, placing close to the top-performing teams.</p>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>What It Does</h2>
+      <ul class="project-feature-list">
+        <li><strong>Modular ML pipeline</strong> — Clean separation of data loading, preprocessing, feature engineering, model training, evaluation, and prediction in <code>src/</code></li>
+        <li><strong>NGS-aware preprocessing</strong> — Handling of special codes (6, 9, 99) and normalization of mixed-type columns</li>
+        <li><strong>CatBoost classifier</strong> — Native categorical support, early stopping, configurable hyperparameters</li>
+        <li><strong>Stratified K-fold cross-validation</strong> and optional grid search for hyperparameter tuning</li>
+        <li><strong>Interpretability</strong> — Feature importance and optional SHAP integration</li>
+        <li><strong>Reproducible workflow</strong> — <code>python3 -m src.train</code> and <code>python3 -m src.predict</code> for end-to-end training and submission</li>
+        <li><strong>Five Jupyter notebooks</strong> — Exploration, preprocessing, training/tuning, evaluation/interpretability, pipeline demo</li>
+      </ul>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Tech Stack</h2>
+      <div class="tech-tags">
+        <span>Python</span>
+        <span>CatBoost</span>
+        <span>pandas</span>
+        <span>NumPy</span>
+        <span>scikit-learn</span>
+        <span>Matplotlib</span>
+        <span>Seaborn</span>
+        <span>Jupyter</span>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Key Takeaways</h2>
+      <p>Structured pipelines and NGS-aware preprocessing were essential for leaderboard performance. CatBoost’s native categorical handling and interpretability (feature importance, SHAP) made it a strong choice for this tabular classification task.</p>
+    </section>
+
+    <p style="margin-top: 2rem;">
+      <a href="../projects.html" class="project-back">← Back to Projects</a>
+    </p>
+  </main>
+  <script src="../../scripts/resume-preview.js"></script>
+</body>
+</html>

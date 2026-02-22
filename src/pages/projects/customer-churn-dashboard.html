@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Churn Analytics Dashboard | Ilian Khankhalaev</title>
+  <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body class="page-projects">
+  <div class="page-bg" aria-hidden="true"></div>
+  <nav class="nav-sticky">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ilian Khankhalaev</a>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../../assets/Ilian-Khankhalaev-Resume.pdf">Resume</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container project-detail">
+    <p><a href="../projects.html" class="project-back">← Back to Projects</a></p>
+    <header class="project-header">
+      <h1 class="project-title">Customer Churn Analytics Dashboard</h1>
+      <p class="project-summary">End-to-end analytics pipeline and executive dashboard for analyzing customer churn for a subscription-based telecom service. Uses the Telco Customer Churn dataset with a SQL → R → Tableau stack: raw data modeled and cleaned in SQL, transformed and aggregated in R, and visualized in a Tableau dashboard for churn patterns, high-risk segments, and revenue at risk.</p>
+      <div class="project-meta-row">
+        <div class="project-meta-links">
+          <a href="https://public.tableau.com/app/profile/ilian.khankhalaev/viz/CustomerChurnDashboardTelco/Dashboard1?publish=yes" target="_blank" rel="noopener noreferrer">Tableau Dashboard</a>
+          <a href="https://github.com/florykhan/customer-churn-dashboard" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        </div>
+        <div class="project-detail-labels">
+          <span class="project-card-label project-card-demo">Demo</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="project-detail-section">
+      <h2>Problem &amp; Context</h2>
+      <p>The goal was to build a reproducible analytics pipeline from raw Telco churn data to dashboard-ready outputs, identify churn patterns and high-risk segments (contract type, tenure, services), quantify revenue at risk (MRR from churned or at-risk customers), and deliver an executive-facing Tableau dashboard with clear KPIs and actionable insights. The pipeline separates ingest (SQL), transform (R), and visualize (Tableau) for maintainability.</p>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>What It Does</h2>
+      <ul class="project-feature-list">
+        <li><strong>SQL layer</strong> — Staging tables, cleaning and normalization, KPI views for churn rate and revenue at risk</li>
+        <li><strong>R layer</strong> — Extract from SQLite, build KPI and driver tables, export CSVs for Tableau (DBI, RSQLite, dplyr, tidyr, readr)</li>
+        <li><strong>Tableau dashboard</strong> — KPI summary, churn by segment (contract, tenure, internet, payment), Contract × Tenure and Contract × Internet heatmaps, MRR at risk views</li>
+        <li><strong>Documentation</strong> — report.md for methodology and reproducibility</li>
+      </ul>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Tech Stack</h2>
+      <div class="tech-tags">
+        <span>SQL</span>
+        <span>SQLite</span>
+        <span>R</span>
+        <span>dplyr</span>
+        <span>tidyr</span>
+        <span>Tableau</span>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Key Takeaways</h2>
+      <p>Combining SQL for modeling and cleaning, R for aggregation and export, and Tableau for storytelling produces a clear path from raw data to executive-ready insights. The dashboard answers which segments churn most and where revenue is at risk.</p>
+    </section>
+
+    <p style="margin-top: 2rem;">
+      <a href="../projects.html" class="project-back">← Back to Projects</a>
+    </p>
+  </main>
+  <script src="../../scripts/resume-preview.js"></script>
+</body>
+</html>

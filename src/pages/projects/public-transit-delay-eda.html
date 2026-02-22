@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Transit Delay — EDA | Ilian Khankhalaev</title>
+  <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body class="page-projects">
+  <div class="page-bg" aria-hidden="true"></div>
+  <nav class="nav-sticky">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ilian Khankhalaev</a>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../../assets/Ilian-Khankhalaev-Resume.pdf">Resume</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container project-detail">
+    <p><a href="../projects.html" class="project-back">← Back to Projects</a></p>
+    <header class="project-header">
+      <h1 class="project-title">Public Transit Delay — Exploratory Data Analysis</h1>
+      <p class="project-summary">Structured exploratory data analysis of public transit delay data: cleaning raw delay data, engineering features (time-based, delay categories), and producing clear visualizations and insights to understand when, where, and how delays occur. Two Jupyter notebooks (cleaning + EDA) with key findings on distribution, temporal patterns, route-level performance, and on-time rates.</p>
+      <div class="project-meta-row">
+        <div class="project-meta-links">
+          <a href="https://github.com/florykhan/public-transit-delay-eda" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="project-detail-section">
+      <h2>Problem &amp; Context</h2>
+      <p>The goal was to load and clean raw public transit delay data, document data quality issues (missing values, types, outliers), engineer features for analysis and future modeling, explore the cleaned dataset through well-labeled visualizations, and summarize key findings in a reproducible way. The dataset (Kaggle: Public Transport Delays with Weather and Events) covers trip-level records with scheduled/actual times, delay minutes, route, weather, and congestion.</p>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>What It Does</h2>
+      <ul class="project-feature-list">
+        <li><strong>Data cleaning</strong> — Missing values, types, duplicates and invalid entries; save cleaned output to <code>data/processed/</code></li>
+        <li><strong>Feature engineering</strong> — Time-based and delay-related features for EDA and modeling</li>
+        <li><strong>Exploratory analysis</strong> — 4–6 well-labeled plots with short insights (notebook 02_eda)</li>
+        <li><strong>Key findings</strong> — Median delay ~13 min; Route_12, Route_18, Route_15 highest mean delays; ~25% on time, ~75% delayed; weak correlation with congestion and precipitation</li>
+      </ul>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Tech Stack</h2>
+      <div class="tech-tags">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>NumPy</span>
+        <span>Matplotlib</span>
+        <span>Seaborn</span>
+        <span>Jupyter</span>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Key Takeaways</h2>
+      <p>A clean two-notebook workflow (cleaning → EDA) keeps the analysis reproducible and portfolio-ready. The findings support operational focus on high-delay routes and inform future modeling (e.g. regression or classification on delay).</p>
+    </section>
+
+    <p style="margin-top: 2rem;">
+      <a href="../projects.html" class="project-back">← Back to Projects</a>
+    </p>
+  </main>
+  <script src="../../scripts/resume-preview.js"></script>
+</body>
+</html>

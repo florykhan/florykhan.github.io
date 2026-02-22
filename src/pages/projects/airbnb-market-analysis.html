@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vancouver Airbnb Market Analysis | Ilian Khankhalaev</title>
+  <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body class="page-projects">
+  <div class="page-bg" aria-hidden="true"></div>
+  <nav class="nav-sticky">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ilian Khankhalaev</a>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../../assets/Ilian-Khankhalaev-Resume.pdf">Resume</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container project-detail">
+    <p><a href="../projects.html" class="project-back">← Back to Projects</a></p>
+    <header class="project-header">
+      <h1 class="project-title">Vancouver Airbnb Market Analysis — SQL + Tableau</h1>
+      <p class="project-summary">End-to-end data analytics workflow for Vancouver Airbnb listing data: raw CSV ingestion and SQLite storage, SQL-based aggregation and export, and an interactive Tableau dashboard for pricing, neighbourhood, and room-type insights using the Inside Airbnb Vancouver dataset.</p>
+      <div class="project-meta-row">
+        <div class="project-meta-links">
+          <a href="https://public.tableau.com/app/profile/ilian.khankhalaev/viz/VancouverAirbnbPricesNeighbourhoodsRoomTypes/Dashboard1?publish=yes" target="_blank" rel="noopener noreferrer">Tableau Dashboard</a>
+          <a href="https://github.com/florykhan/airbnb-market-analysis" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        </div>
+        <div class="project-detail-labels">
+          <span class="project-card-label project-card-demo">Demo</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="project-detail-section">
+      <h2>Problem &amp; Context</h2>
+      <p>The goal was to load and clean Airbnb listing and review data into a SQLite database, answer business questions using SQL (neighbourhood-level metrics, room-type summaries), export results to CSV for Tableau, and build an interactive dashboard. The project simulates a real-world data analyst task where stakeholders need clear, visual answers about market performance and pricing patterns.</p>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>What It Does</h2>
+      <ul class="project-feature-list">
+        <li><strong>Structured data pipeline</strong> — Raw CSVs → Python ETL → SQLite with price cleaning and date handling</li>
+        <li><strong>SQL-first analytics</strong> — Reusable queries for median prices (window functions), averages, counts; NULL and outlier filters ($20–$1000)</li>
+        <li><strong>Neighbourhood summary</strong> — Listing count, avg/median price, avg reviews, % entire home/apt, availability</li>
+        <li><strong>Room type summary</strong> — Count, avg and median price by Entire home/apt, Private room, Shared room</li>
+        <li><strong>Interactive Tableau dashboard</strong> — Choropleth map by neighbourhood, scatter (price vs reviews), bar charts by room type and top neighbourhoods; filters for price and room type</li>
+        <li><strong>Exploratory notebook</strong> — Jupyter EDA for sanity checks and dashboard design</li>
+      </ul>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Tech Stack</h2>
+      <div class="tech-tags">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>SQLite</span>
+        <span>SQL</span>
+        <span>Tableau</span>
+        <span>Jupyter</span>
+        <span>Matplotlib</span>
+        <span>Seaborn</span>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Key Takeaways</h2>
+      <p>Clean separation of ETL (Python), analytics (SQL), and visualization (Tableau) makes the workflow reproducible and easy to extend. The dashboard communicates pricing and neighbourhood insights at a glance and is published on Tableau Public for sharing.</p>
+    </section>
+
+    <p style="margin-top: 2rem;">
+      <a href="../projects.html" class="project-back">← Back to Projects</a>
+    </p>
+  </main>
+  <script src="../../scripts/resume-preview.js"></script>
+</body>
+</html>
