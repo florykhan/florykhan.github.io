@@ -2173,85 +2173,112 @@ body.page-home .see-all a:focus-visible {
    Skills / Tech Stack
    ======================================== */
 
+.skills-intro {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  margin: -0.35rem 0 1.25rem;
+  max-width: 28em;
+}
+
 .skills-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
   width: 100%;
+  align-items: start;
+}
+
+@media (min-width: 720px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+}
+
+@keyframes skill-glow {
+  0%, 100% {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12), 0 0 20px rgba(168, 85, 247, 0.06);
+  }
+  50% {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12), 0 0 28px rgba(168, 85, 247, 0.14);
+  }
 }
 
 .skill-group {
   width: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
   padding: 1.25rem 1.5rem;
-  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 0.15s ease, background-color 0.15s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.skill-group::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
-  opacity: 0.6;
-  border-radius: 14px 0 0 14px;
-  transition: opacity 0.25s ease;
+@media (min-width: 720px) {
+  .skill-group {
+    min-height: 100%;
+  }
 }
 
-.skill-group:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
-  border-color: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+/* Home page: same glass style as project cards / post cards */
+body.page-home .skill-group {
+  background-color: rgba(28, 24, 36, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+  animation: skill-glow 4s ease-in-out infinite;
 }
 
-.skill-group:hover::before {
-  opacity: 1;
-}
-
-/* Home page: skills cards hover – accent glow */
 body.page-home .skill-group:hover {
-  border-color: rgba(168, 85, 247, 0.25);
-  box-shadow: 0 4px 28px rgba(168, 85, 247, 0.12);
+  background-color: rgba(48, 38, 62, 0.55);
+  border-color: rgba(168, 85, 247, 0.15);
 }
 
-body.page-home .skill-group:hover::before {
-  opacity: 1;
-  box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+@media (hover: hover) {
+  body.page-home .skill-group:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 24px rgba(168, 85, 247, 0.12);
+  }
 }
 
 .skill-group h4 {
   font-size: 0.7rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.5);
   margin: 0 0 0.85rem;
-  padding-left: 0.25rem;
+  padding-left: 0.15rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
 }
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 0.65rem;
-  align-items: center;
+.skills-grid .chips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 0.75rem;
+  align-content: start;
 }
 
-.chips span {
+@media (min-width: 720px) {
+  .skills-grid .chips {
+    gap: 0.5rem 0.85rem;
+  }
+}
+
+.skills-grid .chips span {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.4rem 0.75rem;
+  padding: 0.45rem 0.7rem;
   border-radius: 8px;
   transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  text-align: center;
 }
 
 .skill-group:hover .chips span {
