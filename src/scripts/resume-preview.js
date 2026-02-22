@@ -7,6 +7,7 @@
   var iframe = null;
   var closeBtn = null;
   var downloadLink = null;
+  var escapeHandler = null;
 
   function createModal() {
     if (modal) return modal;
@@ -22,7 +23,9 @@
           '<a href="#" class="resume-preview-download" target="_blank" rel="noopener noreferrer">Download PDF</a>' +
           '<button type="button" class="resume-preview-close" aria-label="Close preview">&times;</button>' +
         '</div>' +
-        '<iframe class="resume-preview-iframe" title="Resume (PDF)"></iframe>' +
+        '<div class="resume-preview-iframe-wrap">' +
+          '<iframe class="resume-preview-iframe" title="Resume (PDF)"></iframe>' +
+        '</div>' +
       '</div>';
     document.body.appendChild(modal);
     iframe = modal.querySelector('.resume-preview-iframe');
@@ -34,13 +37,20 @@
       modal.classList.remove('resume-preview-open');
       iframe.removeAttribute('src');
       document.body.style.overflow = '';
+      if (escapeHandler) {
+        document.removeEventListener('keydown', escapeHandler, true);
+      }
     }
+
+    escapeHandler = function (e) {
+      if (e.key !== 'Escape' || !modal.classList.contains('resume-preview-open')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      close();
+    };
 
     closeBtn.addEventListener('click', close);
     backdrop.addEventListener('click', close);
-    modal.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') close();
-    });
     downloadLink.addEventListener('click', function (e) {
       e.stopPropagation();
       downloadLink.setAttribute('href', iframe.getAttribute('src') || '#');
@@ -51,11 +61,13 @@
   function openPreview(url) {
     createModal();
     var absoluteUrl = new URL(url, window.location.href).href;
-    iframe.setAttribute('src', absoluteUrl);
+    var separator = absoluteUrl.indexOf('#') === -1 ? '#' : '&';
+    var pdfUrlWithView = absoluteUrl + separator + 'view=FitH';
+    iframe.setAttribute('src', pdfUrlWithView);
     downloadLink.setAttribute('href', absoluteUrl);
     modal.classList.add('resume-preview-open');
     document.body.style.overflow = 'hidden';
-    closeBtn.focus();
+    document.addEventListener('keydown', escapeHandler, true);
   }
 
   function init() {
