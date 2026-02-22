@@ -6,9 +6,13 @@
   <title>Projects | Ilian Khankhalaev</title>
   <link rel="icon" href="../assets/icons/favicon.png" type="image/png">
   <link rel="stylesheet" href="../styles/main.css">
+  <script>
+    (function(){ if (sessionStorage.getItem('projects-bg-gif-seen')) document.documentElement.classList.add('projects-bg-cached'); })();
+  </script>
 </head>
 <body class="page-projects page-projects-listing">
   <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-bg-gif" aria-hidden="true"></div>
   <div class="page-projects-listing-section-bg" aria-hidden="true"></div>
   <nav class="nav-sticky">
     <div class="nav-inner">
@@ -256,6 +260,7 @@
       </div>
     </section>
   </main>
+  <script src="../scripts/background-gif-reveal.js"></script>
   <script src="../scripts/resume-preview.js"></script>
   <script src="../scripts/text-scramble-reveal.js"></script>
   <script>
