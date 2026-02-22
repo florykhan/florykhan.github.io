@@ -37,6 +37,20 @@
     </header>
 
     <section class="project-detail-section">
+      <h2>Screenshots</h2>
+      <div class="project-screenshots-grid project-screenshots-grid--2">
+        <figure class="project-screenshot">
+          <img src="../../assets/projects/undereployment-prediction/exploration%20heatmap.png" alt="Exploration heatmap from underemployment prediction EDA">
+          <figcaption>Exploratory analysis: correlation and feature relationships in the NGS hiring dataset, used to inform preprocessing and feature selection for the CatBoost pipeline.</figcaption>
+        </figure>
+        <figure class="project-screenshot">
+          <img src="../../assets/projects/undereployment-prediction/results.png" alt="Model results and evaluation metrics">
+          <figcaption>Model evaluation and interpretability — feature importance and validation metrics from the CatBoost classifier (0.75 public / 0.71 private leaderboard accuracy at the SFU ML Hackathon).</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
       <h2>Problem &amp; Context</h2>
       <p>The goal was to build a robust model that accurately estimates overqualification probability from candidate attributes (education, experience, skills, demographics), work with the NGS dataset and its feature structure (survey codes, missing conventions), and train a CatBoost-based model with validation and leaderboard-oriented iteration. The solution achieved <strong>0.75174</strong> accuracy on the Public leaderboard and <strong>0.70511</strong> on the Private leaderboard, placing close to the top-performing teams.</p>
     </section>

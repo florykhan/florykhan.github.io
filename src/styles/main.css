@@ -3331,6 +3331,44 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
   }
 }
 
+/* Project page: screenshot / figure with caption */
+.project-detail .project-screenshot {
+  margin: 1.5rem 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.project-detail .project-screenshot img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.project-detail .project-screenshot figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.875rem;
+  color: #888;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.project-detail .project-screenshots-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .project-detail .project-screenshots-grid.project-screenshots-grid--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* Project page: feature list */
 .project-detail .project-feature-list {
   margin: 0;
