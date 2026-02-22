@@ -122,7 +122,7 @@ body.page-home .page-bg {
   background-position: center center;
   background-repeat: no-repeat;
   transform: translateZ(0);
-  transition: opacity 0.9s ease;
+  transition: opacity 1.4s ease;
 }
 
 /* Once scrolled past hero, fade out GIF so only static background is visible */
