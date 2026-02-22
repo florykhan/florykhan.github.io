@@ -200,11 +200,16 @@ body.page-projects-listing .page-bg-gif {
   background-position: center center;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 2.5s ease;
+  transition: opacity 6.5s ease;
 }
 
 body.page-projects-listing.gif-ready .page-bg-gif {
   opacity: 1;
+}
+
+/* After first load in session: show GIF immediately, no long fade */
+body.page-projects-listing.gif-ready.gif-no-transition .page-bg-gif {
+  transition: none;
 }
 
 body.page-projects-listing.past-intro .page-bg,
