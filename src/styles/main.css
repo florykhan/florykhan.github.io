@@ -200,7 +200,7 @@ body.page-projects-listing .page-bg-gif {
   background-position: center center;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 6.5s ease;
+  transition: opacity 8.5s ease;
 }
 
 body.page-projects-listing.gif-ready .page-bg-gif {
