@@ -147,24 +147,27 @@ body[data-narrative] .page-bg {
     url('../assets/background-blur2.png');
 }
 
-/* Projects listing: greenish/teal overlay over background image */
+/* Projects listing: green overlay over background gif */
 body.page-projects-listing .page-bg {
-  background-color: #060a0a;
+  background-color: #060c08;
   background-image:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.28) 35%, rgba(0, 0, 0, 0.4) 100%),
     linear-gradient(
       165deg,
-      rgba(7, 10, 10, 0.91) 0%,
-      rgba(8, 12, 12, 0.89) 12%,
-      rgba(9, 13, 13, 0.87) 25%,
-      rgba(10, 15, 15, 0.85) 38%,
-      rgba(11, 16, 16, 0.85) 50%,
-      rgba(9, 14, 14, 0.87) 62%,
-      rgba(8, 11, 11, 0.89) 75%,
-      rgba(7, 10, 10, 0.91) 88%,
-      rgba(6, 9, 9, 0.93) 100%
+      rgba(6, 14, 8, 0.91) 0%,
+      rgba(7, 16, 9, 0.89) 12%,
+      rgba(8, 18, 10, 0.87) 25%,
+      rgba(9, 20, 11, 0.85) 38%,
+      rgba(10, 22, 12, 0.85) 50%,
+      rgba(8, 18, 10, 0.87) 62%,
+      rgba(7, 16, 9, 0.89) 75%,
+      rgba(6, 14, 8, 0.91) 88%,
+      rgba(5, 12, 7, 0.93) 100%
     ),
-    url('../assets/background-blur.png');
+    url('../assets/background-slow.gif');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 /* Project detail pages: darker dark blue overlay over background image */
