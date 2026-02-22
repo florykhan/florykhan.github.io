@@ -104,7 +104,7 @@ body.page-projects:not(.page-projects-listing) main {
   backface-visibility: hidden;
 }
 
-/* Home: purplish overlay + blurred background */
+/* Home: GIF covers full viewport; fades out when past hero to reveal static bg underneath */
 body.page-home .page-bg {
   background-color: #040306;
   background-image:
@@ -117,10 +117,18 @@ body.page-home .page-bg {
       rgba(14, 10, 24, 0.86) 75%,
       rgba(5, 4, 7, 0.9) 100%
     ),
-    url('../assets/background.png');
-  transform: scale(1.08) translateZ(0);
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
+    url('../assets/background.gif');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform: translateZ(0);
+  transition: opacity 0.9s ease;
+}
+
+/* Once scrolled past hero, fade out GIF so only static background is visible */
+body.page-home.past-hero .page-bg {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Narrative pages: same purplish overlay, background-blur2.png (darker) */
@@ -191,14 +199,14 @@ body.page-home main {
   z-index: 1;
 }
 
-/* From first section down: use background-blur.png (same purple overlay as hero) */
+/* From first section down: same purple overlay as hero, static background image */
 body.page-home .page-home-section-bg {
   position: fixed;
-  top: 100vh;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 0;
+  z-index: -2;
   pointer-events: none;
   background-color: #040306;
   background-image:
