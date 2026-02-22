@@ -3770,6 +3770,6 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
   min-height: 70vh;
   border: none;
   background: #fff;
-  transform: scale(1.058) translateY(-5%);
+  transform: scale(1.058) translateY(-6%);
   transform-origin: center top;
 }
