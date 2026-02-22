@@ -9,6 +9,7 @@
 </head>
 <body class="page-projects page-projects-listing">
   <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-projects-listing-section-bg" aria-hidden="true"></div>
   <nav class="nav-sticky">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">Ilian Khankhalaev</a>
@@ -215,6 +216,20 @@
   </main>
   <script src="../scripts/resume-preview.js"></script>
   <script src="../scripts/text-scramble-reveal.js"></script>
+  <script>
+    (function () {
+      if (document.body.classList.contains('page-projects-listing')) {
+        var intro = document.querySelector('.projects-intro');
+        if (intro) {
+          function update() {
+            document.body.classList.toggle('past-intro', window.scrollY >= intro.offsetHeight * 0.7);
+          }
+          window.addEventListener('scroll', update, { passive: true });
+          update();
+        }
+      }
+    })();
+  </script>
   <script>
     (function () {
       var nav = document.querySelector('.projects-nav');
