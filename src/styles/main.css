@@ -3594,3 +3594,93 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
     opacity: 0;
   }
 }
+
+/* ========================================
+   Resume preview modal
+   ======================================== */
+
+.resume-preview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+
+.resume-preview-modal.resume-preview-open {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
+.resume-preview-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}
+
+.resume-preview-box {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: calc(100vh - 2rem);
+  background: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.resume-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #252525;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.resume-preview-download {
+  color: var(--accent-light, #a78bfa);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.resume-preview-download:hover {
+  text-decoration: underline;
+}
+
+.resume-preview-close {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.resume-preview-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.resume-preview-iframe {
+  flex: 1;
+  min-height: 70vh;
+  width: 100%;
+  border: none;
+  background: #fff;
+}
