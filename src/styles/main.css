@@ -200,12 +200,10 @@ body.page-projects-listing .page-bg-gif {
   background-position: center center;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 4.5s ease;
+  transition: opacity 2.5s ease;
 }
 
-/* First load: fade in GIF when ready. Return visit: show GIF immediately (html.projects-bg-cached set in head). */
-body.page-projects-listing.gif-ready .page-bg-gif,
-html.projects-bg-cached body.page-projects-listing .page-bg-gif {
+body.page-projects-listing.gif-ready .page-bg-gif {
   opacity: 1;
 }
 

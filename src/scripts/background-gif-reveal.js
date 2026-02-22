@@ -10,7 +10,6 @@
   var img = new Image();
   function ready() {
     body.classList.add('gif-ready');
-    sessionStorage.setItem('projects-bg-gif-seen', '1');
   }
   img.onload = ready;
   img.onerror = ready;
