@@ -11,9 +11,9 @@
 
   var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
   var firstLoad = !sessionStorage.getItem('text-scramble-reveal-seen');
-  var SCRAMBLE_DURATION = firstLoad ? 2200 : 650;
-  var SCRAMBLE_INTERVAL = firstLoad ? 60 : 50;
-  var STAGGER_MS = firstLoad ? 200 : 95;
+  var SCRAMBLE_DURATION = firstLoad ? 1100 : 650;
+  var SCRAMBLE_INTERVAL = firstLoad ? 52 : 50;
+  var STAGGER_MS = firstLoad ? 120 : 95;
   var THRESHOLD = 0.3;
 
   function randomChar() {
