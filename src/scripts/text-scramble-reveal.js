@@ -10,9 +10,10 @@
   if (prefersReducedMotion || !elements.length) return;
 
   var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*';
-  var SCRAMBLE_DURATION = 650;
-  var SCRAMBLE_INTERVAL = 50;
-  var STAGGER_MS = 95;
+  var firstLoad = !sessionStorage.getItem('text-scramble-reveal-seen');
+  var SCRAMBLE_DURATION = firstLoad ? 2200 : 650;
+  var SCRAMBLE_INTERVAL = firstLoad ? 60 : 50;
+  var STAGGER_MS = firstLoad ? 200 : 95;
   var THRESHOLD = 0.3;
 
   function randomChar() {
@@ -58,6 +59,7 @@
   function runScramble(el) {
     if (el.dataset.textScrambleDone === '1') return;
     el.dataset.textScrambleDone = '1';
+    try { sessionStorage.setItem('text-scramble-reveal-seen', '1'); } catch (e) {}
 
     var wrapper = el.querySelector('.text-scramble-reveal-inner');
     var srSpan = el.querySelector('.sr-only');
