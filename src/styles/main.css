@@ -3051,7 +3051,7 @@ body.page-projects-listing .projects-info-popover {
   /* Center the logos within the fixed-width column.
      Tweak translateX() to manually fine‑tune their horizontal position. */
   justify-content: center;
-  transform: translateX(0.41em);
+  transform: translateX(0.40em);
 }
 
 /* Fixed-width label column so all descriptions align (same width for pills and icons) */
