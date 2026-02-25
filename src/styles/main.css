@@ -3041,14 +3041,17 @@ body.page-projects-listing .projects-info-popover {
   border-color: rgba(255, 255, 255, 0.07);
 }
 
-/* Last two rows (icon labels): align left with the rows above */
+/* Last two rows (icon labels): nudge slightly left so descriptions align */
 .projects-info-popover-list li:nth-last-child(1),
 .projects-info-popover-list li:nth-last-child(2) {
-  margin-left: -0.75em;
+  margin-left: -0.87em;
 }
 .projects-info-popover-list li:nth-last-child(1) > :first-child,
 .projects-info-popover-list li:nth-last-child(2) > :first-child {
-  justify-content: flex-start;
+  /* Center the logos within the fixed-width column.
+     Tweak translateX() to manually fine‑tune their horizontal position. */
+  justify-content: center;
+  transform: translateX(0.41em);
 }
 
 /* Fixed-width label column so all descriptions align (same width for pills and icons) */
