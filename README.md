@@ -21,7 +21,6 @@ This site demonstrates that a polished, interactive portfolio can be shipped wit
 **https://florykhan.github.io**
 
 ![Website screenshot](src/assets/projects/personal-website.png)
-
 _Screenshot of the portfolio homepage_
 
 ---
