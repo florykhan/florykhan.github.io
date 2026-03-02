@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FutureSpend — See Tomorrow, Save Today | Ilian Khankhalaev</title>
+  <link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body class="page-projects">
+  <div class="page-bg" aria-hidden="true"></div>
+  <nav class="nav-sticky">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Ilian Khankhalaev</a>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../projects.html" class="active">Projects</a></li>
+        <li><a href="../../assets/Ilian-Khankhalaev-Resume.pdf">Resume</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container project-detail">
+    <p><a href="../projects.html" class="project-back">← Back to Projects</a></p>
+    <header class="project-header">
+      <h1 class="project-title">FutureSpend — See Tomorrow, Save Today, Share Success</h1>
+      <p class="project-summary">AI-powered personal finance dashboard that predicts upcoming spending from calendar events and transaction data. Connects your calendar to spending predictions: analyzes upcoming events (meals, outings, transport), predicts likely spend by category, and surfaces insights, savings challenges, and an AI coach. Built with Next.js, TypeScript, Tailwind, and a FastAPI backend deployed on Render.</p>
+      <div class="project-meta-row">
+        <div class="project-meta-links">
+          <a href="https://florykhan.github.io/FutureSpend/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+          <a href="https://github.com/florykhan/FutureSpend" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        </div>
+        <div class="project-detail-labels">
+          <span class="project-card-label project-card-demo">Demo</span>
+          <img src="../../assets/icons/team.png" alt="" class="project-card-logo" width="24" height="24" aria-hidden="true" title="Team Project">
+        </div>
+      </div>
+    </header>
+
+    <section class="project-detail-section">
+      <figure class="project-screenshot">
+        <img src="../../assets/projects/FutureSpend.png" alt="FutureSpend financial dashboard with spending forecasts, category insights, and budgeting metrics">
+        <figcaption>Financial dashboard with spending forecasts, category insights, and budgeting metrics. Calendar-driven pipeline surfaces upcoming expenses and recommended actions.</figcaption>
+      </figure>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Problem &amp; Context</h2>
+      <p>Calendar-driven financial awareness is often missing: people see their week’s spend only after it happens. FutureSpend addresses this by turning your calendar into a spending forecast — built in 24 hours at a hackathon sponsored by <strong>SFU CSSS</strong> and <strong>RBC</strong>. The system analyzes upcoming events (dining, social, transport, entertainment), predicts likely spend by category using a rules-based pipeline, and surfaces insights and recommended actions (e.g. trim one event to stay under budget). Target users: individuals and teams who want a lightweight, calendar-first view of upcoming expenses.</p>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>What It Does</h2>
+      <ul class="project-feature-list">
+        <li><strong>Calendar-driven pipeline</strong> — Mock or real calendar events → parsing → category-based spend prediction → forecast, insights, and challenges</li>
+        <li><strong>Dashboard</strong> — Health score, 7-day forecast, Sankey diagram by category, spending history, and recommended actions</li>
+        <li><strong>Challenges &amp; leaderboard</strong> — Join savings challenges, track progress, and compete with friends (mock participants in demo)</li>
+        <li><strong>Banking (demo)</strong> — Checking balance, vaults, lock/unlock funds; wired for RBC-style APIs in production</li>
+        <li><strong>AI coach</strong> — Chat with an assistant that uses your dashboard context; powered by Google Gemini when <code>GEMINI_API_KEY</code> is set</li>
+        <li><strong>Static export</strong> — Frontend builds as a static site for GitHub Pages; no Node server required in production</li>
+      </ul>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Tech Stack</h2>
+      <div class="tech-tags">
+        <span>Next.js 14</span>
+        <span>React 18</span>
+        <span>TypeScript</span>
+        <span>Tailwind CSS</span>
+        <span>Recharts</span>
+        <span>D3 (Sankey)</span>
+        <span>Python 3.11</span>
+        <span>FastAPI</span>
+        <span>Uvicorn</span>
+        <span>Pydantic</span>
+        <span>Google Gemini</span>
+        <span>Render</span>
+        <span>GitHub Pages</span>
+      </div>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Architecture / How It Works</h2>
+      <p>Two-tier setup: <strong>Frontend</strong> (Next.js 14 with <code>output: 'export'</code> for static GitHub Pages) and <strong>Backend</strong> (FastAPI + uvicorn on Render). The frontend talks to the backend via <code>NEXT_PUBLIC_API_URL</code>. Calendar events (mock or Google) are parsed into features, run through a prediction pipeline for category-based spend, then feed the dashboard, insights, challenges, and optional Gemini-powered AI coach. Banking and leaderboard endpoints support the demo experience.</p>
+    </section>
+
+    <section class="project-detail-section">
+      <h2>Key Takeaways</h2>
+      <p>FutureSpend demonstrates calendar-first personal finance: predicting spend before it happens and making small trade-offs. The modular stack — Next.js static export, FastAPI backend, optional Gemini integration — is built for hackathon speed and can be extended with real calendar and bank APIs. Working with event parsing, category-based prediction, and an AI coach in a single 24-hour build provided hands-on experience in full-stack deployment (Render + GitHub Pages) and user-focused financial UX.</p>
+    </section>
+
+    <p style="margin-top: 2rem;">
+      <a href="../projects.html" class="project-back">← Back to Projects</a>
+    </p>
+  </main>
+  <script src="../../scripts/resume-preview.js"></script>
+</body>
+</html>
