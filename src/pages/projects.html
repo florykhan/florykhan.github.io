@@ -49,8 +49,9 @@
           </div>
           <nav class="projects-nav" role="tablist" aria-label="Jump to category">
             <a href="#fullstack" role="tab" aria-selected="false" data-section="fullstack">Full-Stack Applications</a>
-            <a href="#ml" role="tab" aria-selected="false" data-section="ml">Data &amp; Machine Learning</a>
-            <a href="#coursework" role="tab" aria-selected="false" data-section="coursework">Independent Projects & Research</a>
+            <a href="#data-analytics" role="tab" aria-selected="false" data-section="data-analytics">Data Analytics</a>
+            <a href="#ml" role="tab" aria-selected="false" data-section="ml">Machine Learning</a>
+            <a href="#coursework" role="tab" aria-selected="false" data-section="coursework">Independent Projects</a>
           </nav>
         </div>
       </div>
@@ -112,9 +113,9 @@
       </div>
     </section>
 
-    <section id="ml" class="section project-category">
+    <section id="data-analytics" class="section project-category">
       <div class="container">
-        <h2 class="category-heading">Data &amp; Machine Learning</h2>
+        <h2 class="category-heading">Data Analytics &amp; BI</h2>
         <div class="project-cards">
           <a class="project-card" href="./projects/customer-churn-dashboard.html">
             <div class="project-card-labels-row">
@@ -145,28 +146,6 @@
               <span>Pandas</span>
             </div>
           </a>
-          <a class="project-card" href="./projects/graduate-underemployment-prediction.html">
-            <div class="project-card-title-row">
-              <h3>Underemployment Prediction</h3>
-              <img src="../assets/icons/team.png" alt="" class="project-card-logo" width="24" height="24" aria-hidden="true" title="Team Project">
-            </div>
-            <p>Full ML pipeline (CatBoost) for overqualification prediction on NGS hiring data. SFU ML Hackathon; 0.75 public / 0.71 private leaderboard accuracy.</p>
-            <div class="tech-tags">
-              <span>Python</span>
-              <span>CatBoost</span>
-              <span>scikit-learn</span>
-              <span>Jupyter</span>
-            </div>
-          </a>
-          <a class="project-card" href="./projects/house-price-ml.html">
-            <h3>House-Price-ML (v2 Feature Engineering)</h3>
-            <p>ML pipeline for house price prediction with advanced feature engineering.</p>
-            <div class="tech-tags">
-              <span>Python</span>
-              <span>scikit-learn</span>
-              <span>Pandas</span>
-            </div>
-          </a>
           <a class="project-card" href="./projects/public-transit-delay-eda.html">
             <h3>Public Transit Delay — EDA</h3>
             <p>Structured EDA of transit delay data: cleaning, feature engineering, and visualizations for delay distribution, temporal patterns, and route-level performance.</p>
@@ -176,15 +155,6 @@
               <span>Matplotlib</span>
               <span>Seaborn</span>
               <span>Jupyter</span>
-            </div>
-          </a>
-          <a class="project-card" href="./projects/house-price-ml-v1-baseline.html">
-            <h3>House-Price-ML (v1 Baseline)</h3>
-            <p>Baseline ML pipeline for California house price prediction with Linear Regression and EDA.</p>
-            <div class="tech-tags">
-              <span>Python</span>
-              <span>scikit-learn</span>
-              <span>Pandas</span>
             </div>
           </a>
           <a class="project-card" href="./projects/pendulum-data-driven-control.html">
@@ -214,6 +184,45 @@
             <div class="tech-tags">
               <span>Python</span>
               <span>ML</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="ml" class="section project-category">
+      <div class="container">
+        <h2 class="category-heading">Machine Learning Projects</h2>
+        <div class="project-cards">
+          <a class="project-card" href="./projects/graduate-underemployment-prediction.html">
+            <div class="project-card-title-row">
+              <h3>Underemployment Prediction</h3>
+              <img src="../assets/icons/team.png" alt="" class="project-card-logo" width="24" height="24" aria-hidden="true" title="Team Project">
+            </div>
+            <p>Full ML pipeline (CatBoost) for overqualification prediction on NGS hiring data. SFU ML Hackathon; 0.75 public / 0.71 private leaderboard accuracy.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>CatBoost</span>
+              <span>scikit-learn</span>
+              <span>Jupyter</span>
+            </div>
+          </a>
+          <a class="project-card" href="./projects/house-price-ml.html">
+            <h3>House-Price-ML (v2 Feature Engineering)</h3>
+            <p>ML pipeline for house price prediction with advanced feature engineering.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>scikit-learn</span>
+              <span>Pandas</span>
+            </div>
+          </a>
+          <a class="project-card" href="./projects/house-price-ml-v1-baseline.html">
+            <h3>House-Price-ML (v1 Baseline)</h3>
+            <p>Baseline ML pipeline for California house price prediction with Linear Regression and EDA.</p>
+            <div class="tech-tags">
+              <span>Python</span>
+              <span>scikit-learn</span>
+              <span>Pandas</span>
             </div>
           </a>
         </div>
@@ -296,7 +305,7 @@
     (function () {
       var nav = document.querySelector('.projects-nav');
       var tabs = nav ? nav.querySelectorAll('a[data-section]') : [];
-      var sections = ['fullstack', 'ml', 'coursework'].map(function (id) {
+      var sections = ['fullstack', 'data-analytics', 'ml', 'coursework'].map(function (id) {
         return document.getElementById(id);
       }).filter(Boolean);
 

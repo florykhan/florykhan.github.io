@@ -3046,7 +3046,7 @@ main h1 {
 .projects-intro-card {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 790px;
   margin: 0 auto;
   padding: 1.5rem 1.75rem;
   background: rgba(255, 255, 255, 0.04);
