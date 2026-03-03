@@ -563,7 +563,7 @@ body.page-home .hero::before {
 }
 
 .hero-name {
-  font-size: clamp(3rem, 14vw, 6rem);
+  font-size: clamp(3.5rem, 17vw, 7rem);
   font-weight: 600;
   margin: 0 0 0.5rem;
   /* Periodic gradient: first and second halves match so loop is seamless */
@@ -3853,7 +3853,7 @@ body.page-projects .project-detail .project-meta-links a:focus-visible {
   }
 
   .hero-name {
-    font-size: clamp(2.25rem, 12vw, 3.5rem);
+    font-size: clamp(2.75rem, 14vw, 4.25rem);
   }
 
   .intro-inner {
